@@ -408,6 +408,12 @@ abstract class AdaptiveScreenshotTest(private val size: String) {
         ClassicShell("detail", capped = true) { nav -> com.music.spotui.ui.screens.SettingsScreen(nav) }
     } }
 
+    // The "Log in with Spotify" surface of the union: the account choice before any sign-in. The
+    // stand-in host has no account and no network: this renders the choice UI only, no real auth.
+    @Test fun classicAccountChoice() = bareHost().let { shoot("classic-account-choice") {
+        com.music.spotui.ui.screens.AccountChoiceScreen(onBack = {}, onDone = {})
+    } }
+
     @Test fun classicPlayer() = shoot("classic-player") {
         com.music.spotui.ui.screens.PlayerScreen(rememberNavController())
     }

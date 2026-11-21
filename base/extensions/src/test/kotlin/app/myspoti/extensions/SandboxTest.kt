@@ -216,7 +216,8 @@ class SandboxTest {
     }
 
     @Test fun featuresNameWhatThisAppUnderstands() {
-        assertEquals("""{"v":"audio.manifest,audio.expires,audio.quality,audio.source,audio.ahead,http.all,status,results,sources.race,settings.section,util.sleep,lyrics.romanize"}""", eval("return myspoti.features.join(',');"))
+        // Union: raw.base64 stays (Spotify raw API restored); download.transform/audio.transform are gone (latest refuses extension media decryption).
+        assertEquals("""{"v":"audio.manifest,audio.expires,audio.quality,audio.source,audio.ahead,http.all,status,raw.base64,results,sources.race,settings.section,util.sleep,lyrics.romanize"}""", eval("return myspoti.features.join(',');"))
     }
 
     @Test fun sleepCapsBackoffWithoutNeedingPermissions() {

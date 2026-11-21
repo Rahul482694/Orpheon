@@ -130,7 +130,7 @@
     sources: Object.freeze({ race: function (hook, query, lanes) {
       return parse(host.sourceRace(String(hook),JSON.stringify(query),JSON.stringify(lanes)));
     } }),
-    features: Object.freeze(['audio.manifest', 'audio.expires', 'audio.quality', 'audio.source', 'audio.ahead', 'http.all', 'status', 'raw.base64', 'results', 'download.transform', 'audio.transform', 'sources.race', 'settings.section', 'util.sleep', 'lyrics.romanize'].concat(parse(host.info()).mirror ? ['player.localMute'] : [], parse(host.info()).attest ? ['attest'] : [])),
+    features: Object.freeze(['audio.manifest', 'audio.expires', 'audio.quality', 'audio.source', 'audio.ahead', 'http.all', 'status', 'raw.base64', 'results', 'sources.race', 'settings.section', 'util.sleep', 'lyrics.romanize'].concat(parse(host.info()).mirror ? ['player.localMute'] : [], parse(host.info()).attest ? ['attest'] : [])),
 
     /**
      * A sign-in page (webview.auth): open({ url, callback, hidden }) shows url in a web view of its
