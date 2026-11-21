@@ -66,20 +66,31 @@ jobs:
         run: ./gradlew :app:testDebugUnitTest :host-android:testDebugUnitTest :extensions:test :api:test :catalog:test :pass:test :automix:test
 
 
-      - name: Upload screenshot PNGs
- working-directory: .
- if: always()
- uses: actions/upload-artifact@v7
- with:
- name: orpheon-union-screens
- path: base/app/build/outputs/roborazzi/*.png
- if-no-files-found: warn
- retention-days: 14
-
- - name: APK identity
+      - name: APK identity
         working-directory: .
         run: |
           BT=$(ls -d "$ANDROID_HOME"/build-tools/* 2>/dev/null | tail -1)
+          : > base/identity.txt
           for APK in base/app/build/outputs/apk/debug/*.apk; do
-            echo "== $APK =="
-            "$BT/aapt" dump badging "$APK" | grep -E "^package|sdkVersion|targetSdkVersion" || true
+            echo "== $APK ==" | tee -a base/identity.txt
+            "$BT/aapt" dump badging "$APK" | grep -E "^package|sdkVersion|targetSdkVersion" | tee -a base/identity.txt || true
+            "$BT/apksigner" verify --print-certs "$APK" 2>/dev/null | head -4 | tee -a base/identity.txt || true
+          done
+
+      - name: Upload screenshot PNGs
+        working-directory: .
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: orpheon-union-screens
+          path: |
+            base/app/build/outputs/roborazzi/*.png
+            base/identity.txt
+          if-no-files-found: warn
+          retention-days: 14
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: orpheon-union-debug
+          path: base/app/build/outputs/apk/debug/*.apk
+          retention-days: 14
