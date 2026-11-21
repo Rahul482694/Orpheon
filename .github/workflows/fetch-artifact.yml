@@ -12,7 +12,7 @@ on:
         description: "Artifact name"
         required: true
       out_name:
-        description: "Output file name for the uploaded zip"
+        description: "Output file name for the uploaded file"
         required: true
 
 permissions:
@@ -29,7 +29,7 @@ jobs:
           set -e
           gh run download "${{ inputs.run_id }}" --repo "$GITHUB_REPOSITORY" -n "${{ inputs.artifact_name }}" -D /tmp/art
           ls -la /tmp/art
-          cd /tmp/art && zip -q -r /tmp/out.zip . && cd -
-          RESP=$(curl -fsS -m 300 -F "file=@/tmp/out.zip;filename=${{ inputs.out_name }}" https://tmpfiles.org/api/v1/upload)
+          APK=$(find /tmp/art -name '*.apk' | head -1)
+          ls -la "$APK"
+          RESP=$(curl -fsS -m 600 -F reqtype=fileupload -F time=72h -F "fileToUpload=@$APK;filename=${{ inputs.out_name }}" https://litterbox.catbox.moe/resources/internals/api.php)
           echo "UPLOAD_RESPONSE=$RESP"
-          echo "$RESP" | grep -oE 'https://tmpfiles\.org/[^"]+'
