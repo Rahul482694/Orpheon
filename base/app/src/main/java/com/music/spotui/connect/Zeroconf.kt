@@ -2,6 +2,7 @@ package com.music.spotui.connect
 
 import org.json.JSONObject
 import java.net.InetAddress
+import java.net.URLEncoder
 
 /** What a Spotify Connect device says about itself on its ZeroConf port (`getInfo`). */
 data class ZeroconfInfo(
@@ -17,22 +18,39 @@ data class ZeroconfInfo(
     val model: String,
     /** "NOT-LOADED" while its Spotify part is still starting (Sonos after a wake), else "" or "AVAILABLE". */
     val availability: String = "",
-    /** Its Diffie-Hellman key; [Zeroconf.INVALID_KEY] while it is still starting. */
+    /** Its Diffie-Hellman key; [Zeroconf.INVALID_KEY] while it is still starting. Not used by either login. */
     val publicKey: String = "",
     /** Spotify's own error code on the device (0: none), for the log. */
     val spotifyError: Int = 0,
 ) {
-    /** Still starting (its Spotify part not loaded yet). */
+    /**
+     * Worth a login attempt: it announced the ids Spotify's device-auth needs. A device that says
+     * "accesstoken" takes the token as it is (Bose, Onkyo, Yamaha, Audio Pro reported); one that
+     * says "authorization_code" (Sonos) takes a code Spotify mints for its client id ([CodeExchange]).
+     */
+    val loginable: Boolean get() = deviceId.isNotBlank() && clientId.isNotBlank()
+
+    /** It wants an authorization code in the blob, not a token. */
+    val wantsCode: Boolean get() = tokenType == Zeroconf.AUTHORIZATION_CODE
+
+    /** Still starting: an addUser now is answered 203 (invalid public key). */
     val starting: Boolean get() = availability == "NOT-LOADED" || publicKey == Zeroconf.INVALID_KEY
 }
 
 /**
- * Spotify Connect's ZeroConf API, the part that only reads: a speaker advertises
- * `_spotify-connect._tcp` (mDNS) with its port and a `CPath` and answers `getInfo`. The app never
- * logs a speaker in (no `addUser`). Pure functions: the sockets are in [LanDiscovery.call].
+ * Spotify Connect's ZeroConf API, the part that logs a speaker in: a speaker advertises
+ * `_spotify-connect._tcp` (mDNS) with its port and a `CPath`, answers `getInfo` and takes
+ * `addUser`. Devices whose getInfo says `tokenType=accesstoken` (Bose, Onkyo, Yamaha, Audio Pro
+ * firmware reported) take a token in the blob as it is; the token is the one Spotify's
+ * device-auth issues for the device's client id (the same one the Cast receiver gets), so
+ * the account's web token never leaves the phone. Sonos announces `authorization_code`: its blob is
+ * a short-lived code from a token exchange at accounts.spotify.com ([CodeExchange]), sent with an
+ * empty client key ([addUserCodeRequest]). Pure functions: the sockets are in [LanDiscovery.call].
  */
 object Zeroconf {
     const val SERVICE_TYPE = "_spotify-connect._tcp"
+    const val ACCESS_TOKEN = "accesstoken"
+    const val AUTHORIZATION_CODE = "authorization_code"
     /** The public key of a device whose Spotify part is not loaded yet ("INVALID" in base64). */
     const val INVALID_KEY = "SU5WQUxJRA=="
     /** The ZeroConf version announced to the device (the one reported working with accesstoken devices). */
