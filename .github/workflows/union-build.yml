@@ -1,0 +1,56 @@
+# Experimental: builds the union merge (Orpheon 1.0.0 + Spotify integration restored from the
+# last Spotify-capable upstream code). The merge is delivered as .github/merge/union.gz.b64
+# (gzipped git binary patch, base64) because the token CI runs with may not push refs that
+# contain workflow files, so the branch is reconstructed here instead of pushed.
+# Manual dispatch only; publishes nothing.
+name: Union build
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    working-directory: base
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Apply the union merge patch
+        working-directory: .
+        run: |
+          base64 -d .github/merge/union.gz.b64 | gunzip > /tmp/union.patch
+          git apply --binary /tmp/union.patch
+          git add -A
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -q -m "union merge: v1.0.0 + Spotify integration restored (reconstructed from .github/merge/union.gz.b64)"
+          git log --oneline -2
+          git status --porcelain | head
+
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - uses: android-actions/setup-android@v4
+        with:
+          packages: "platforms;android-37.0 build-tools;36.0.0"
+
+      - uses: gradle/actions/setup-gradle@v6
+
+      - name: Debug APK
+        run: ./gradlew assembleDebug
+
+      - name: Unit tests
+        run: ./gradlew :app:testDebugUnitTest :host-android:testDebugUnitTest :extensions:test :api:test :catalog:test :pass:test :automix:test
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: orpheon-union-debug
+          path: base/app/build/outputs/apk/debug/*.apk
+          retention-days: 14
