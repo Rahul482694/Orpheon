@@ -1,0 +1,48 @@
+name: Evidence fetch
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_id:
+        required: true
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/download-artifact@v7
+        with:
+          name: orpheon-union-screens
+          run-id: ${{ inputs.run_id }}
+          path: ev
+
+      - name: pick
+        run: |
+          ls -la ev || true
+          mkdir -p out
+          cp ev/identity.txt out/ || true
+          find ev -iname '*.png' | sort
+          F=$(find ev -iname '*choice*.png' | head -1)
+          test -z "$F" && F=$(find ev -iname '*.png' | head -1)
+          echo "chosen: $F"
+          cp "$F" out/screen.png
+          ls -la out
+
+      - name: push
+        run: |
+          git config user.name evidence-bot
+          git config user.email bot@users.noreply.github.com
+          B="evidence-${{ inputs.run_id }}"
+          git checkout -b "$B"
+          mkdir -p evidence
+          cp out/identity.txt evidence/ || true
+          cp out/screen.png evidence/
+          git add evidence
+          git commit -m "evidence for run ${{ inputs.run_id }}"
+          git push origin "$B"
