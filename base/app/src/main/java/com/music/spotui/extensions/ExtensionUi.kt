@@ -141,6 +141,8 @@ private fun shielded(): Boolean = SurfaceGuard.app.state.collectAsState().value.
 fun actionIcon(a: Action?): ImageVector = when (a) {
     Action.PLAYBACK_CONTROL -> Icons.Rounded.PlayCircle
     Action.PLAYBACK_EVENTS -> Icons.Rounded.GraphicEq
+    Action.PLAYBACK_QUEUE -> Icons.AutoMirrored.Rounded.QueueMusic
+    Action.PLAYBACK_MIRROR -> Icons.Rounded.VolumeOff
     Action.LYRICS_PROVIDE -> Icons.Rounded.Lyrics
     Action.LYRICS_ROMANIZE -> Icons.Rounded.Abc
     Action.TRACKINFO_PROVIDE -> Icons.Rounded.Info
@@ -169,6 +171,8 @@ fun actionIcon(a: Action?): ImageVector = when (a) {
 fun actionLabel(a: Action?): Int = when (a) {
     Action.PLAYBACK_CONTROL -> R.string.action_playback_control
     Action.PLAYBACK_EVENTS -> R.string.action_playback_events
+    Action.PLAYBACK_QUEUE -> R.string.action_playback_queue
+    Action.PLAYBACK_MIRROR -> R.string.action_playback_mirror
     Action.LYRICS_PROVIDE -> R.string.action_lyrics_provide
     Action.LYRICS_ROMANIZE -> R.string.action_lyrics_romanize
     Action.TRACKINFO_PROVIDE -> R.string.action_trackinfo_provide
@@ -199,6 +203,7 @@ fun askLabel(a: Ask): Int = if (a.key == Action.NETWORK_ANY) R.string.action_net
 
 fun areaIcon(area: Area): ImageVector = when (area) {
     Area.PLAYBACK -> Icons.Rounded.PlayCircle
+    Area.LIBRARY -> Icons.Rounded.LibraryMusic
     Area.LYRICS -> Icons.Rounded.Lyrics
     Area.AUDIO -> Icons.Rounded.Headphones
     Area.HOME -> Icons.Rounded.Home
@@ -208,6 +213,7 @@ fun areaIcon(area: Area): ImageVector = when (area) {
 
 fun areaLabel(area: Area): Int = when (area) {
     Area.PLAYBACK -> R.string.area_playback
+    Area.LIBRARY -> R.string.area_library
     Area.LYRICS -> R.string.area_lyrics
     Area.AUDIO -> R.string.area_audio
     Area.HOME -> R.string.area_home
