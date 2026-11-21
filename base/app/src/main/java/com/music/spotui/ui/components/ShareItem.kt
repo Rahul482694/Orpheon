@@ -7,6 +7,8 @@ import kotlinx.coroutines.flow.MutableStateFlow
 
 /** What a share is about: an item of the app (a song, album, playlist, artist…), by its name. */
 data class ShareTarget(val uri: String, val title: String, val subtitle: String = "", val coverUri: String = "") {
+    /** The open.spotify.com link of [uri]. */
+    val link: String get() = uri.split(':').let { p -> if (p.size >= 3 && p[0] == "spotify") "https://open.spotify.com/${p[1]}/${p[2]}" else uri }
     /** What is shared: the name and who it is by. No service link: the app has none of its own. */
     val text: String get() = if (subtitle.isBlank()) title else "$title — $subtitle"
 }

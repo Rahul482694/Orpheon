@@ -528,6 +528,7 @@ private fun ChangeRow(c: app.myspoti.extensions.Change) {
     val title = when (c.kind) {
         app.myspoti.extensions.Change.Kind.ACTION -> stringResource(R.string.extension_change_action, label)
         app.myspoti.extensions.Change.Kind.HOST -> stringResource(R.string.extension_change_host, if (c.key == "*") stringResource(R.string.extension_change_any_host) else c.key)
+        app.myspoti.extensions.Change.Kind.WRITE -> stringResource(R.string.extension_change_write, c.key)
         app.myspoti.extensions.Change.Kind.EXCLUSIVE -> stringResource(R.string.extension_change_exclusive, label)
         app.myspoti.extensions.Change.Kind.WHY -> stringResource(R.string.extension_change_why, label)
         app.myspoti.extensions.Change.Kind.CODE -> stringResource(R.string.update_code_files, c.key.ifBlank { "main" } + " (+${c.added}/−${c.removed})")

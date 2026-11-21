@@ -363,6 +363,7 @@ internal fun categoryLabel(c: Category?): Int = when (c) {
     null -> R.string.extensions_cat_all
     Category.LYRICS -> R.string.extensions_cat_lyrics
     Category.PLAYBACK -> R.string.extensions_cat_playback
+    Category.LIBRARY -> R.string.extensions_cat_library
     Category.DISCOVERY -> R.string.extensions_cat_discovery
     Category.STATS -> R.string.extensions_cat_stats
     Category.LOOK -> R.string.extensions_cat_look

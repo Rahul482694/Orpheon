@@ -33,6 +33,7 @@ fun mosaicCoverFor(songCovers: List<String>): String {
     return when {
         ids.size == 4 -> "https://mosaic.scdn.co/640/" + ids.joinToString("")
         ids.isNotEmpty() -> prefix + ids.first()
-        else -> ""
+        // v1 fallback: no scdn covers (another account's artwork): the first usable cover as-is.
+        else -> songCovers.firstOrNull { it.isNotBlank() && !it.startsWith("spotify:") }.orEmpty()
     }
 }

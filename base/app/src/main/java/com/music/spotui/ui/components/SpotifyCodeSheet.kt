@@ -71,12 +71,6 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.io.File
 
-/** What a share sheet is about: a Spotify uri (track, album, playlist, artist, show, episode). */
-data class ShareTarget(val uri: String, val title: String, val subtitle: String = "", val coverUri: String = "") {
-    /** The open.spotify.com link of [uri]. */
-    val link: String get() = uri.split(':').let { p -> if (p.size >= 3 && p[0] == "spotify") "https://open.spotify.com/${p[1]}/${p[2]}" else uri }
-}
-
 /**
  * Sharing, as in the official app: the Spotify Code first (the bars under the cover that
  * Spotify's camera scans), the link under it, then copy / share the link / share the code as
