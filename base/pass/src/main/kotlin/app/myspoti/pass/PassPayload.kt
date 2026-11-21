@@ -41,3 +41,6 @@ data class PassExtension(
     val id: String, val packageZip: String, val granted: List<String> = emptyList(), val enabled: Boolean = true,
     val storage: String? = null, val settings: String? = null,
 )
+
+@Serializable
+data class PassCookie(val name: String, val value: String)
