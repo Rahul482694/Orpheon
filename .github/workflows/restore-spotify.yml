@@ -1,0 +1,48 @@
+# One-off, manually run: brings back the last upstream Orpheon commit that still had
+# Spotify sign-in (kota-zo 70f323c5, 2026-11-12, preserved in the thake/SoundNest fork,
+# GPL-3.0), pushes it as the branch "spotify-login", then builds and tests it exactly
+# the way the upstream android.yml does and uploads the debug APKs as an artifact.
+name: Build Orpheon with Spotify login
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  restore-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Create the spotify-login branch and check it out
+        run: |
+          git fetch https://github.com/thake/SoundNest.git 70f323c5e5c3c21305b3177eb681e84ba02ce872
+          git push origin FETCH_HEAD:refs/heads/spotify-login
+          git checkout -b build-spotify FETCH_HEAD
+
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - uses: android-actions/setup-android@v4
+        with:
+          packages: "platforms;android-37.0 build-tools;36.0.0"
+
+      - uses: gradle/actions/setup-gradle@v6
+
+      - name: Unit tests
+        working-directory: base
+        run: ./gradlew :app:testDebugUnitTest :host-android:testDebugUnitTest :extensions:test :api-spotify:test :host-cdp:test
+
+      - name: Debug APK
+        working-directory: base
+        run: ./gradlew assembleDebug
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: orpheon-spotify-debug
+          path: base/app/build/outputs/apk/debug/*.apk
+          retention-days: 30
