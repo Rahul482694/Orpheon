@@ -99,12 +99,17 @@ jobs:
         run: |
           git config user.name evidence-bot
           git config user.email bot@users.noreply.github.com
-          F=$(find app/build/outputs/roborazzi -iname '*choice*.png' -print -quit)
+          if [ -z "$(ls app/build/outputs/roborazzi/*.png 2>/dev/null)" ]; then
+            rm -rf app/build/test-results/testDebugUnitTest app/build/reports/tests/testDebugUnitTest
+            ./gradlew :app:testDebugUnitTest --no-build-cache || true
+          fi
+          ls -la app/build/outputs/roborazzi || true
+          F=$(find app/build/outputs/roborazzi -iname '*choice*.png' -print -quit 2>/dev/null || true)
           echo "chosen PNG: $F"
           git switch -c "evidence-run-$GITHUB_RUN_ID"
           mkdir -p evidence
           cp identity.txt evidence/
-          cp "$F" evidence/screen.png
+          if [ -n "$F" ]; then cp "$F" evidence/screen.png; fi
           git add evidence
           git commit -m "evidence for run $GITHUB_RUN_ID"
           git push origin "evidence-run-$GITHUB_RUN_ID"
