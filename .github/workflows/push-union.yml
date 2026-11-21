@@ -1,0 +1,57 @@
+# Experimental: durably records the union merge tree as a commit on branch `union-merge`.
+# Transport: a sha256-pinned gzipped git patch (against v1.0.0, commit 773dcc7) on a temp file
+# host; this workflow applies it, writes the tree as a new commit whose parent is the previous
+# union-merge head (recovery history), and pushes. .github/workflows is dropped from the branch
+# tree because the CI token may not push refs containing workflow files; the parents retain them.
+# Manual dispatch only; publishes nothing else.
+name: Push union branch
+
+on:
+  workflow_dispatch:
+    inputs:
+      patch_view_url:
+        description: "tmpfiles view URL of the gzipped patch"
+        required: true
+      patch_sha256:
+        description: "sha256 of the .gz file"
+        required: true
+      message:
+        description: "Commit message subject"
+        required: true
+        default: "union merge: v1.0.0 + Spotify integration restored"
+
+permissions:
+  contents: write
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Apply patch and push union-merge branch
+        run: |
+          set -e
+          DL=$(curl -fsSL --retry 3 "${{ inputs.patch_view_url }}" | grep -oE 'https://tmpfiles\.org/dl/[^"]+' | head -1)
+          test -n "$DL"
+          curl -fsSL --retry 3 -o /tmp/union.patch.gz "$DL"
+          echo "${{ inputs.patch_sha256 }}  /tmp/union.patch.gz" | sha256sum -c -
+          gunzip -c /tmp/union.patch.gz > /tmp/union.patch
+          git checkout -q 773dcc7
+          git apply --binary /tmp/union.patch
+          git add -A
+          git rm -rq .github/workflows || true
+          TREE=$(git write-tree)
+          PARENT=$(git rev-parse -q --verify refs/remotes/origin/union-merge || git rev-parse 773dcc7)
+          COMMIT=$(git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit-tree "$TREE" -p "$PARENT" -m "${{ inputs.message }}
+
+Union of Orpheon v1.0.0 (773dcc7) with the Spotify integration from the last
+Spotify-capable upstream code (kota-zo/Orpheon 70f323c5, via thake/SoundNest).
+Reconstructed from a pinned patch, sha256 ${{ inputs.patch_sha256 }}.
+.github/workflows omitted on this branch (token restriction); see parents.")
+          git push origin "$COMMIT:refs/heads/union-merge"
+          echo "PUSHED=$COMMIT"
+          git log --oneline -3 "$COMMIT"
