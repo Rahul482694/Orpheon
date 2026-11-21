@@ -2,15 +2,19 @@
 # restored; source committed durably by push-union.yml). Manual dispatch only; publishes nothing.
 name: Union build
 
+
 on:
   workflow_dispatch:
+
 
 permissions:
   contents: read
 
+
 defaults:
   run:
     working-directory: base
+
 
 jobs:
   build:
@@ -20,19 +24,24 @@ jobs:
         with:
           ref: union-merge
 
+
       - uses: actions/setup-java@v6
         with:
           distribution: temurin
           java-version: "21"
 
+
       - uses: android-actions/setup-android@v4
         with:
           packages: "platforms;android-37.0 build-tools;36.0.0"
 
+
       - uses: gradle/actions/setup-gradle@v6
+
 
       - name: Debug APK
         run: ./gradlew assembleDebug
+
 
       - name: Sign debug APKs with the persistent derivative-build key
         working-directory: .
@@ -52,21 +61,25 @@ jobs:
           done
           rm -f "$RUNNER_TEMP/union.keystore"
 
+
       - name: Unit tests
         run: ./gradlew :app:testDebugUnitTest :host-android:testDebugUnitTest :extensions:test :api:test :catalog:test :pass:test :automix:test
 
-      - name: APK identity
+
+      - name: Upload screenshot PNGs
+ working-directory: .
+ if: always()
+ uses: actions/upload-artifact@v7
+ with:
+ name: orpheon-union-screens
+ path: base/app/build/outputs/roborazzi/*.png
+ if-no-files-found: warn
+ retention-days: 14
+
+ - name: APK identity
         working-directory: .
         run: |
           BT=$(ls -d "$ANDROID_HOME"/build-tools/* 2>/dev/null | tail -1)
           for APK in base/app/build/outputs/apk/debug/*.apk; do
             echo "== $APK =="
             "$BT/aapt" dump badging "$APK" | grep -E "^package|sdkVersion|targetSdkVersion" || true
-            "$BT/apksigner" verify --print-certs "$APK" 2>/dev/null | head -4 || true
-          done
-
-      - uses: actions/upload-artifact@v7
-        with:
-          name: orpheon-union-debug
-          path: base/app/build/outputs/apk/debug/*.apk
-          retention-days: 14
