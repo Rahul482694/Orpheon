@@ -19,8 +19,13 @@ jobs:
       - name: Create the spotify-login branch and check it out
         run: |
           git fetch https://github.com/thake/SoundNest.git 70f323c5e5c3c21305b3177eb681e84ba02ce872
-          git push origin FETCH_HEAD:refs/heads/spotify-login
-          git checkout -b build-spotify FETCH_HEAD
+          git checkout -b spotify-login FETCH_HEAD
+          # The Actions token (a GitHub App) may not push files under .github/workflows, so the
+          # branch drops them in one commit on top; the upstream tree and its full history stay
+          # the parent commit 70f323c5 (kota-zo, GPL-3.0, via thake/SoundNest).
+          git rm -rq .github/workflows
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -qm "Restore branch: drop workflow files so the Actions token can push (upstream 70f323c5 kept as parent)"
+          git push -u origin spotify-login
 
       - uses: actions/setup-java@v6
         with:
