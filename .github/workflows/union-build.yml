@@ -1,9 +1,5 @@
-# Experimental: builds the union merge (Orpheon 1.0.0 + Spotify integration restored from the
-# last Spotify-capable upstream code). The merge is delivered as a gzipped git binary patch
-# fetched from a temporary file host and verified against a pinned sha256, because the token
-# CI runs with may not push refs that contain workflow files, so the branch is reconstructed
-# here instead of pushed. The patch content is public GPL-3.0 source only; no secrets.
-# Manual dispatch only; publishes nothing.
+# Experimental: builds the union merge branch `union-merge` (Orpheon 1.0.0 + Spotify integration
+# restored; source committed durably by push-union.yml). Manual dispatch only; publishes nothing.
 name: Union build
 
 on:
@@ -21,22 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-
-      - name: Fetch and apply the union merge patch
-        working-directory: .
-        run: |
-          VIEW=https://tmpfiles.org/wwAAbaTfwWF1/union.patch.gz
-          DL=$(curl -fsSL --retry 3 "$VIEW" | grep -oE 'https://tmpfiles\.org/dl/[^"]+' | head -1)
-          test -n "$DL"
-          curl -fsSL --retry 3 -o /tmp/union.patch.gz "$DL"
-          echo "4e1d7514abbfc1f24490e0157b85ea923ff0426356e5d19b6445169a6d4ef4b9  /tmp/union.patch.gz" | sha256sum -c -
-          gunzip -c /tmp/union.patch.gz > /tmp/union.patch
-          git apply --binary /tmp/union.patch
-          git add -A
-          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
-            commit -q -m "union merge: v1.0.0 + Spotify integration restored (reconstructed from pinned patch)"
-          git log --oneline -2
-          git status --porcelain | head
+        with:
+          ref: union-merge
 
       - uses: actions/setup-java@v6
         with:
@@ -54,6 +36,16 @@ jobs:
 
       - name: Unit tests
         run: ./gradlew :app:testDebugUnitTest :host-android:testDebugUnitTest :extensions:test :api:test :catalog:test :pass:test :automix:test
+
+      - name: APK identity
+        working-directory: .
+        run: |
+          BT=$(ls -d "$ANDROID_HOME"/build-tools/* 2>/dev/null | tail -1)
+          for APK in base/app/build/outputs/apk/debug/*.apk; do
+            echo "== $APK =="
+            "$BT/aapt" dump badging "$APK" | grep -E "^package|sdkVersion|targetSdkVersion" || true
+            "$BT/apksigner" verify --print-certs "$APK" 2>/dev/null | head -4 || true
+          done
 
       - uses: actions/upload-artifact@v7
         with:
