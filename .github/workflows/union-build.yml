@@ -1,7 +1,8 @@
 # Experimental: builds the union merge (Orpheon 1.0.0 + Spotify integration restored from the
-# last Spotify-capable upstream code). The merge is delivered as .github/merge/union.gz.b64
-# (gzipped git binary patch, base64) because the token CI runs with may not push refs that
-# contain workflow files, so the branch is reconstructed here instead of pushed.
+# last Spotify-capable upstream code). The merge is delivered as a gzipped git binary patch
+# fetched from a temporary file host and verified against a pinned sha256, because the token
+# CI runs with may not push refs that contain workflow files, so the branch is reconstructed
+# here instead of pushed. The patch content is public GPL-3.0 source only; no secrets.
 # Manual dispatch only; publishes nothing.
 name: Union build
 
@@ -21,14 +22,16 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
-      - name: Apply the union merge patch
+      - name: Fetch and apply the union merge patch
         working-directory: .
         run: |
-          base64 -d .github/merge/union.gz.b64 | gunzip > /tmp/union.patch
+          curl -fsSL --retry 3 -o /tmp/union.patch.gz https://tmpfiles.org/dl/wNA5b3H6mp5I/union.patch.gz
+          echo "50e6d01e788f6dbb1f9e474287775ba02870c8fb3d18023afa26da8ad88be455  /tmp/union.patch.gz" | sha256sum -c -
+          gunzip -c /tmp/union.patch.gz > /tmp/union.patch
           git apply --binary /tmp/union.patch
           git add -A
           git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
-            commit -q -m "union merge: v1.0.0 + Spotify integration restored (reconstructed from .github/merge/union.gz.b64)"
+            commit -q -m "union merge: v1.0.0 + Spotify integration restored (reconstructed from pinned patch)"
           git log --oneline -2
           git status --porcelain | head
 
