@@ -34,6 +34,24 @@ jobs:
       - name: Debug APK
         run: ./gradlew assembleDebug
 
+      - name: Sign debug APKs with the persistent derivative-build key
+        working-directory: .
+        env:
+          KS_B64: ${{ secrets.MYSPOTI_KEYSTORE_BASE64 }}
+          KS_PASS: ${{ secrets.MYSPOTI_KEYSTORE_PASSWORD }}
+          KS_ALIAS: ${{ secrets.MYSPOTI_KEY_ALIAS }}
+          KEY_PASS: ${{ secrets.MYSPOTI_KEY_PASSWORD }}
+        run: |
+          set -e
+          test -n "$KS_B64"
+          echo "$KS_B64" | base64 -d > "$RUNNER_TEMP/union.keystore"
+          BT=$(ls -d "$ANDROID_HOME"/build-tools/* 2>/dev/null | tail -1)
+          for APK in base/app/build/outputs/apk/debug/*.apk; do
+            "$BT/apksigner" sign --ks "$RUNNER_TEMP/union.keystore" --ks-pass "pass:$KS_PASS" --key-pass "pass:$KEY_PASS" --ks-key-alias "$KS_ALIAS" --out "$APK.signed" "$APK"
+            mv "$APK.signed" "$APK"
+          done
+          rm -f "$RUNNER_TEMP/union.keystore"
+
       - name: Unit tests
         run: ./gradlew :app:testDebugUnitTest :host-android:testDebugUnitTest :extensions:test :api:test :catalog:test :pass:test :automix:test
 
