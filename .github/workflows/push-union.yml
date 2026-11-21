@@ -46,12 +46,10 @@ jobs:
           TREE=$(git write-tree)
           PARENT=$(git rev-parse -q --verify refs/remotes/origin/union-merge || git rev-parse 773dcc7)
           COMMIT=$(git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
-            commit-tree "$TREE" -p "$PARENT" -m "${{ inputs.message }}
-
-Union of Orpheon v1.0.0 (773dcc7) with the Spotify integration from the last
-Spotify-capable upstream code (kota-zo/Orpheon 70f323c5, via thake/SoundNest).
-Reconstructed from a pinned patch, sha256 ${{ inputs.patch_sha256 }}.
-.github/workflows omitted on this branch (token restriction); see parents.")
+            commit-tree "$TREE" -p "$PARENT" \
+            -m "${{ inputs.message }}" \
+            -m "Union of Orpheon v1.0.0 (773dcc7) with the Spotify integration from the last Spotify-capable upstream code (kota-zo/Orpheon 70f323c5, via thake/SoundNest). Reconstructed from a pinned patch, sha256 ${{ inputs.patch_sha256 }}." \
+            -m ".github/workflows omitted on this branch (token restriction); see parents."
           git push origin "$COMMIT:refs/heads/union-merge"
           echo "PUSHED=$COMMIT"
           git log --oneline -3 "$COMMIT"
