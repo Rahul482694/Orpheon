@@ -13,4 +13,7 @@
     <string name="sources_last_used">آخر استخدام: %1$s، %2$s</string>
     <string name="sources_open">فتح الإضافة</string>
     <string name="sources_order_hint">يتم السؤال عن المصادر بالترتيب المحدد في الإعدادات (التشغيل، التنزيلات).</string>
+<string name="sources_account">Spotify</string>
+    
+<string name="sources_below_account">لا يُطلب: Spotify في الأعلى</string>
 </resources>

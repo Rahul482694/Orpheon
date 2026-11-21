@@ -13,4 +13,7 @@
     <string name="sources_last_used">Zadnje: %1$s, %2$s</string>
     <string name="sources_open">Otvori proširenje</string>
     <string name="sources_order_hint">Izvori se pitaju redoslijedom postavljenim u Postavkama (Reprodukcija, Preuzimanja).</string>
+<string name="sources_account">Spotify</string>
+    
+<string name="sources_below_account">Ne traži se: Spotify je iznad</string>
 </resources>

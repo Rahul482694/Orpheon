@@ -55,4 +55,16 @@
     <string name="nerd_automix_mixing">Mix läuft: %1$s</string>
     <string name="nerd_automix_planned">%1$s bei %2$s, %3$d s</string>
     <string name="nerd_automix_waiting">An, noch kein Mix geplant</string>
+<string name="nerd_section_spotify">Spotify (Web-Player)</string>
+    
+<string name="nerd_mirror">Spotify-Spiegel</string>
+    
+<string name="nerd_mirror_on">An: Spotify spielt diesen Titel unhörbar in der niedrigsten Qualität ab, zählt ihn also und Connect sieht ihn</string>
+    
+<string name="nerd_mirror_extension">An, gehalten von %1$s: Spotify spielt unhörbar ab</string>
+    
+<string name="nerd_mirror_off">Aus</string>
+    
+<string name="nerd_spotify_note">Der Spotify-Stream ist in der Seite verschlüsselt: Sein genauer Codec und seine Bitrate sind nicht zugänglich, nur das, was die Seite angibt.</string>
+    
 </resources>

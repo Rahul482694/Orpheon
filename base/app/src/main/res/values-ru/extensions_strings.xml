@@ -234,4 +234,26 @@
     <string name="why_source_skipped">пропущено: %1$s</string>
     <string name="why_source_title">Почему этот источник?</string>
     <string name="extensions_guide">Как установить расширения</string>
+<string name="extensions_cat_library">Медиатека</string>
+    
+<string name="extensions_empty_body">Расширения добавляют в Orpheon то, чего приложение само не умеет: тексты из других источников, откуда берётся звук или загрузка трека, инструменты, работающие с вашим аккаунтом Spotify. Каждое работает в песочнице и спрашивает разрешения, прежде чем к чему-либо обратиться. Добавьте репозиторий, чтобы просматривать их, или установите пакет, которому доверяете.</string>
+    
+<string name="action_spotify_catalog">Просматривать Spotify</string>
+    
+<string name="action_spotify_raw">Полный доступ к Spotify</string>
+    
+<string name="area_library">Медиатека и Spotify</string>
+    
+<string name="ext_risk_accept">Я понимаю, что это расширение создано третьей стороной, и устанавливаю его под свою ответственность</string>
+    
+<string name="extension_confirm_once">Разрешить один раз</string>
+    
+<string name="extension_confirm_always">Всегда разрешать %1$s</string>
+    
+<string name="ext_grants_title">Всегда разрешено</string>
+    
+<string name="ext_grants_note">Изменения в Spotify, которые это расширение вносит без запроса. Отзовите одно, чтобы вас снова спрашивали.</string>
+    
+<string name="ext_grant_revoke">Отозвать</string>
+    
 </resources>

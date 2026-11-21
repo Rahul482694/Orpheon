@@ -234,4 +234,26 @@
     <string name="why_source_skipped">已跳过：%1$s</string>
     <string name="why_source_title">为什么是这个来源？</string>
     <string name="extensions_guide">如何安装扩展</string>
+<string name="extensions_cat_library">音乐库</string>
+    
+<string name="extensions_empty_body">扩展为 Orpheon 增添其自身不具备的功能：来自其他来源的歌词、歌曲音频或下载的来源、使用你 Spotify 账号的工具。每个扩展都在沙盒中运行，访问任何内容之前都会先征求你的同意。添加仓库即可浏览扩展，也可以安装你信任的安装包。</string>
+    
+<string name="action_spotify_catalog">浏览 Spotify</string>
+    
+<string name="action_spotify_raw">完整访问 Spotify</string>
+    
+<string name="area_library">音乐库与 Spotify</string>
+    
+<string name="ext_risk_accept">我了解此扩展由第三方制作，并自行承担安装责任</string>
+    
+<string name="extension_confirm_once">仅允许一次</string>
+    
+<string name="extension_confirm_always">始终允许 %1$s</string>
+    
+<string name="ext_grants_title">始终允许</string>
+    
+<string name="ext_grants_note">此扩展无需询问即可对 Spotify 进行的更改。撤销某项后将重新询问。</string>
+    
+<string name="ext_grant_revoke">撤销</string>
+    
 </resources>

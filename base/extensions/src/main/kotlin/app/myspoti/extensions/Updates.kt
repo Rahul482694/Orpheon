@@ -40,6 +40,9 @@ data class Snapshot(
 
     fun hosts(): List<String> = actions.firstOrNull { it.name == Action.NETWORK.key }?.hosts.orEmpty()
 
+    /** The Spotify writes accepted, as grants ([Manifest.declaredWrites]). */
+    fun writes(): List<String> = toManifest().declaredWrites().map { it.toString() }
+
     /** A manifest holding what was accepted, for [app.myspoti.extensions.Manifest.asks]-based comparisons. */
     fun toManifest() = Manifest(id, id, version, versionCode, author = author, actions = actions, replaces = replaces, conflictsWith = conflictsWith)
 
@@ -73,6 +76,8 @@ data class Change(
         ACTION,
         /** A network host not accepted before (`*`: any host, critical). */
         HOST,
+        /** A Spotify write declared under spotify.raw not accepted before (allowed with the update: critical). */
+        WRITE,
         /** An exclusive role taken by an action already accepted (the app made it exclusive since). */
         EXCLUSIVE,
         /** An accepted action whose reason changed: any change counts, the user judges the meaning. */
@@ -91,6 +96,7 @@ data class Change(
     val action: Action? get() = when (kind) {
         Kind.ACTION, Kind.EXCLUSIVE, Kind.WHY -> Action.of(key)
         Kind.HOST -> Action.NETWORK
+        Kind.WRITE -> Action.SPOTIFY_RAW
         else -> null
     }
 }

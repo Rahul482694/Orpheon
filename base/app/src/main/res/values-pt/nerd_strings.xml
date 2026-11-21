@@ -55,4 +55,16 @@
     <string name="nerd_automix_mixing">Misturando: %1$s</string>
     <string name="nerd_automix_planned">%1$s em %2$s, %3$d s</string>
     <string name="nerd_automix_waiting">Ativado, nenhuma mistura prevista ainda</string>
+<string name="nerd_section_spotify">Spotify (player web)</string>
+    
+<string name="nerd_mirror">Espelho do Spotify</string>
+    
+<string name="nerd_mirror_on">Ligado: o Spotify toca esta música sem som, na qualidade mais baixa, então ela é contada e o Connect a vê</string>
+    
+<string name="nerd_mirror_extension">Ligado, mantido por %1$s: o Spotify toca sem som</string>
+    
+<string name="nerd_mirror_off">Desligado</string>
+    
+<string name="nerd_spotify_note">O stream do Spotify é criptografado dentro da página: seu codec e taxa de bits exatos não são acessíveis, apenas o que a página informa.</string>
+    
 </resources>

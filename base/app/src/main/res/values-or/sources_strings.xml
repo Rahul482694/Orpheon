@@ -13,4 +13,7 @@
     <string name="sources_last_used">ଶେଷ: %1$s, %2$s</string>
     <string name="sources_open">ଏକ୍ସଟେନସନ୍ ଖୋଲନ୍ତୁ</string>
     <string name="sources_order_hint">ସେଟିଂସ୍ (ପ୍ଲେବ୍ୟାକ୍, ଡାଉନଲୋଡ୍) ରେ ସେଟ୍ ହୋଇଥିବା କ୍ରମରେ ଉତ୍ସ ପଚରାଯାଏ।</string>
+<string name="sources_account">Spotify</string>
+    
+<string name="sources_below_account">ପଚରାଯାଏ ନାହିଁ: Spotify ଉପରେ ଅଛି</string>
 </resources>

@@ -13,4 +13,7 @@
     <string name="sources_last_used">Okokugcina: %1$s, %2$s</string>
     <string name="sources_open">Vula isandiso</string>
     <string name="sources_order_hint">Imithombo ibuzwa ngokuhleleka okusethwe kuZilungiselelo (Ukudlala, Okulandiwe).</string>
+<string name="sources_account">Spotify</string>
+    
+<string name="sources_below_account">Akubuzwa: i-Spotify iphezulu</string>
 </resources>

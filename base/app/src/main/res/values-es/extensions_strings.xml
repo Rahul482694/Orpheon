@@ -234,4 +234,26 @@
     <string name="why_source_skipped">omitida: %1$s</string>
     <string name="why_source_title">¿Por qué esta fuente?</string>
     <string name="extensions_guide">Cómo instalar extensiones</string>
+<string name="extensions_cat_library">Biblioteca</string>
+    
+<string name="extensions_empty_body">Las extensiones añaden a Orpheon lo que no hace por sí mismo: letras de otras fuentes, de dónde viene el audio o la descarga de una canción, herramientas que usan tu cuenta de Spotify. Cada una se ejecuta en un entorno aislado y pregunta antes de acceder a nada. Añade un repositorio para explorarlas o instala un paquete en el que confíes.</string>
+    
+<string name="action_spotify_catalog">Explorar Spotify</string>
+    
+<string name="action_spotify_raw">Acceso completo a Spotify</string>
+    
+<string name="area_library">Biblioteca y Spotify</string>
+    
+<string name="ext_risk_accept">Entiendo que esta extensión la hace un tercero y la instalo bajo mi propia responsabilidad</string>
+    
+<string name="extension_confirm_once">Permitir una vez</string>
+    
+<string name="extension_confirm_always">Permitir siempre %1$s</string>
+    
+<string name="ext_grants_title">Siempre permitido</string>
+    
+<string name="ext_grants_note">Cambios en Spotify que esta extensión hace sin preguntar. Revocar uno hace que vuelva a pedir confirmación.</string>
+    
+<string name="ext_grant_revoke">Revocar</string>
+    
 </resources>

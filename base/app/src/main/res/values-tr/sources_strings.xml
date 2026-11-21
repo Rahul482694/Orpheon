@@ -13,4 +13,7 @@
     <string name="sources_last_used">Son: %1$s, %2$s</string>
     <string name="sources_open">Eklentiyi aç</string>
     <string name="sources_order_hint">Kaynaklar Ayarlar\'da (Oynatma, İndirmeler) belirlenen sırayla sorulur.</string>
+<string name="sources_account">Spotify</string>
+    
+<string name="sources_below_account">Sorulmaz: Spotify yukarıda</string>
 </resources>

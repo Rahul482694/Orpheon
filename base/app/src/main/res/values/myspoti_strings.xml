@@ -810,4 +810,110 @@
     <string name="settings_automix_orpheon_detail">Smoother blends: both songs ease into a shared tempo and back. Off: the earlier planner.</string>
     <string name="no_source_message">No source plays “%1$s”.</string>
     <string name="no_source_message_untitled">No source plays this.</string>
+<string name="welcome_rotate_ads">without ads.</string>
+    
+<string name="welcome_rotate_clips">with the official videos.</string>
+    
+<string name="ad_playing">Advertisement</string>
+    
+<string name="your_episodes_title">Your Episodes</string>
+    
+<string name="new_episodes_title">New episodes</string>
+    
+<string name="recents_title">Recents</string>
+    
+<string name="jam_failed">Spotify refused this Jam</string>
+    
+<string name="setup_account_spotify_detail">The account you just signed in with.</string>
+    
+<string name="player_source_spotify">Spotify · %1$s</string>
+    
+<string name="settings_title">Settings</string>
+    
+<string name="cancel">Cancel</string>
+    
+<string name="profile_following_count">%1$d following</string>
+    
+<string name="play_refused_all">Spotify refuses every command from this player on your account right now (play, seek, transfer). The player was reloaded once; if nothing plays, close the app fully and open it again, or switch between Wi-Fi and mobile data.</string>
+    
+<string name="play_refused">Spotify refused to play this on your account. Free accounts in some countries can only play shuffled: try the shuffle button.</string>
+    
+<string name="drm_missing">Playback is impossible here: this phone\'s Android System WebView has no working Widevine DRM, which Spotify needs. Update Android System WebView and Chrome in the Play Store, and pick it under Settings > Developer options > WebView implementation.</string>
+    
+<string name="songs_skipped_by_spotify">Spotify kept skipping songs it could not play, so playback was paused. Tap play to try again, or check your account and connection.</string>
+    
+<string name="licences_refused_by_spotify">Spotify is refusing to play songs on this account right now (audio licence refused), so playback was paused. Wait a while and tap play to try again, and check that the account plays in the official Spotify app.</string>
+    
+<string name="licences_refused_old_widevine">Spotify refuses this phone’s audio licences: its DRM (Widevine %1$s) is older than what Spotify’s web player accepts, whatever the account, so playback was paused. Spotify songs cannot play from Orpheon on this phone; an audio-source extension can play them.</string>
+    
+<string name="spotify_limited">Spotify is limiting playback for a moment. Try again in a minute.</string>
+    
+<string name="blend_leave">Leave Blend</string>
+    
+<string name="spotify_code_description">Spotify Code</string>
+    
+<string name="spotify_code_hint">Scan it in Spotify (Search, then the camera) to open it.</string>
+    
+<string name="settings_connect_mirror_title">Count extension plays on your music account</string>
+    
+<string name="settings_connect_mirror_detail">Plays the song muted in the background on the music account you chose, so it counts in your history (on Spotify, your devices can also control it). Uses a little more data and battery: turn it off if you don\'t need it.</string>
+    
+<string name="cast_spotify_detail">Google Cast · plays Spotify on it</string>
+    
+<string name="cast_spotify_failed">Could not start Spotify on %1$s</string>
+    
+<string name="login_failed_detail">Spotify\'s page did not load or did not start. Check your connection and try again. If it keeps failing, try another network.</string>
+    
+<string name="lan_device_detail">On this network</string>
+    
+<string name="lan_logging_in">Logging in…</string>
+    
+<string name="lan_failed">%1$s did not accept the login. Open it once with the Spotify app, then try again.</string>
+    
+<string name="lan_others">%1$d more on this network need the Spotify app to log them in first</string>
+    
+<string name="sponsorblock_title" translatable="false">SponsorBlock</string>
+    
+<string name="sponsorblock_detail">Skips sponsor reads and other parts of podcast episodes marked by the SponsorBlock community. Asks sponsor.ajay.app about the episode playing (and YouTube, to find its upload when needed); nothing about you or your account is sent.</string>
+    
+<string name="sponsorblock_skip_header">Parts to skip</string>
+    
+<string name="sponsorblock_cat_sponsor">Sponsors</string>
+    
+<string name="sponsorblock_cat_sponsor_detail">Paid promotions and ad reads</string>
+    
+<string name="sponsorblock_cat_selfpromo">Self-promotion</string>
+    
+<string name="sponsorblock_cat_selfpromo_detail">The show\'s merch, Patreon, other shows</string>
+    
+<string name="sponsorblock_cat_intro_outro">Intro and outro</string>
+    
+<string name="sponsorblock_cat_intro_outro_detail">Opening and closing music, credits</string>
+    
+<string name="sponsorblock_cat_interaction">Reminders</string>
+    
+<string name="sponsorblock_cat_interaction_detail">Asking to follow, rate or subscribe</string>
+    
+<string name="sponsorblock_skipped">Skipped: %1$s</string>
+    
+<string name="lan_sonos_consent">To log in %1$s, Spotify asks once for the permission its desktop app uses. Allow it, or close this page. Orpheon only reads the address the page ends on.</string>
+    
+<string name="lan_sonos_refused">%1$s needs a Spotify login Orpheon could not get. Open it once with the Spotify app, then try again.</string>
+    
+<string name="lan_sonos_group">%1$s is grouped with other speakers: pick the group’s main speaker, or ungroup it in the Sonos app.</string>
+    
+<string name="jam_start_premium">Starting a Jam needs Spotify Premium. You can join one with its link or QR code.</string>
+    
+<string name="jam_plays_on_host">The music plays on the host\'s device: this phone controls it. Spotify only lets Premium accounts listen to a Jam on their own phone.</string>
+    
+<string name="settings_section_connect">Spotify Connect and Jam</string>
+    
+<string name="quality_streaming_very_high_detail">256 kbit/s, Premium accounts only</string>
+    
+    <string name="av_switch_to_video">Switch to video</string>
+    
+<string name="av_switch_to_audio">Switch to audio</string>
+    
+<string name="av_content_desc">Switch between the song and its music video</string>
+    
 </resources>

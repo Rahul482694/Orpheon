@@ -234,4 +234,26 @@
     <string name="why_source_skipped">παραλείφθηκε: %1$s</string>
     <string name="why_source_title">Γιατί αυτή η πηγή;</string>
     <string name="extensions_guide">Πώς να εγκαταστήσεις επεκτάσεις</string>
+<string name="extensions_cat_library">Βιβλιοθήκη</string>
+    
+<string name="extensions_empty_body">Οι επεκτάσεις προσθέτουν στο Orpheon ό,τι δεν κάνει από μόνο του: στίχους από άλλες πηγές, από πού προέρχεται ο ήχος ή η λήψη ενός τραγουδιού, εργαλεία που χρησιμοποιούν τον λογαριασμό σου στο Spotify. Η καθεμία τρέχει σε απομονωμένο περιβάλλον και ρωτά πριν φτάσει οπουδήποτε. Πρόσθεσε ένα αποθετήριο για να τις περιηγηθείς ή εγκατάστησε ένα πακέτο που εμπιστεύεσαι.</string>
+    
+<string name="action_spotify_catalog">Περιήγηση στο Spotify</string>
+    
+<string name="action_spotify_raw">Πλήρης πρόσβαση στο Spotify</string>
+    
+<string name="area_library">Βιβλιοθήκη και Spotify</string>
+    
+<string name="ext_risk_accept">Κατανοώ ότι αυτή η επέκταση είναι από τρίτο και την εγκαθιστώ με δική μου ευθύνη</string>
+    
+<string name="extension_confirm_once">Να επιτραπεί μία φορά</string>
+    
+<string name="extension_confirm_always">Πάντα να επιτρέπεται το %1$s</string>
+    
+<string name="ext_grants_title">Πάντα επιτρεπόμενα</string>
+    
+<string name="ext_grants_note">Αλλαγές στο Spotify που κάνει αυτή η επέκταση χωρίς να ρωτήσει. Ανακαλέστε μία για να ερωτάστε ξανά.</string>
+    
+<string name="ext_grant_revoke">Ανάκληση</string>
+    
 </resources>

@@ -13,4 +13,7 @@
     <string name="sources_last_used">Viimeisin: %1$s, %2$s</string>
     <string name="sources_open">Avaa laajennus</string>
     <string name="sources_order_hint">Lähteet kysytään Asetuksissa (Toisto, Lataukset) määritetyssä järjestyksessä.</string>
+<string name="sources_account">Spotify</string>
+    
+<string name="sources_below_account">Ei kysytä: Spotify on ylempänä</string>
 </resources>

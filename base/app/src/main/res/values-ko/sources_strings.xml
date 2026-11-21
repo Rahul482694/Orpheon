@@ -13,4 +13,7 @@
     <string name="sources_last_used">최근: %1$s, %2$s</string>
     <string name="sources_open">확장 기능 열기</string>
     <string name="sources_order_hint">소스는 설정(재생, 다운로드)에서 정한 순서대로 확인됩니다.</string>
+<string name="sources_account">Spotify</string>
+    
+<string name="sources_below_account">묻지 않음: Spotify가 위에 있습니다</string>
 </resources>

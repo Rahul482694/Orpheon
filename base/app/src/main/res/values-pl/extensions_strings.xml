@@ -234,4 +234,26 @@
     <string name="why_source_skipped">pominięte: %1$s</string>
     <string name="why_source_title">Dlaczego to źródło?</string>
     <string name="extensions_guide">Jak instalować rozszerzenia</string>
+<string name="extensions_cat_library">Biblioteka</string>
+    
+<string name="extensions_empty_body">Rozszerzenia dodają do Orpheon to, czego aplikacja sama nie robi: teksty z innych źródeł, skąd pochodzi dźwięk lub plik do pobrania danego utworu, narzędzia korzystające z Twojego konta Spotify. Każde działa w piaskownicy i pyta, zanim do czegokolwiek sięgnie. Dodaj repozytorium, aby je przeglądać, albo zainstaluj paczkę, której ufasz.</string>
+    
+<string name="action_spotify_catalog">Przeglądać Spotify</string>
+    
+<string name="action_spotify_raw">Pełny dostęp do Spotify</string>
+    
+<string name="area_library">Biblioteka i Spotify</string>
+    
+<string name="ext_risk_accept">Rozumiem, że to rozszerzenie pochodzi od strony trzeciej, i instaluję je na własną odpowiedzialność</string>
+    
+<string name="extension_confirm_once">Zezwól jednorazowo</string>
+    
+<string name="extension_confirm_always">Zawsze zezwalaj na %1$s</string>
+    
+<string name="ext_grants_title">Zawsze dozwolone</string>
+    
+<string name="ext_grants_note">Zmiany w Spotify, które to rozszerzenie wykonuje bez pytania. Cofnij jedną, by znów być pytanym.</string>
+    
+<string name="ext_grant_revoke">Cofnij</string>
+    
 </resources>

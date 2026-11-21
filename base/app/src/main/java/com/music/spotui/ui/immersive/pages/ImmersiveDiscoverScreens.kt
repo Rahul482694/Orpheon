@@ -42,7 +42,7 @@ import com.music.spotui.data.api.TopStats
 import com.music.spotui.data.local.ListenHistory
 import com.music.spotui.di.Graph
 import com.music.spotui.di.SongPlayer
-import com.music.spotui.ui.components.imageUrlOf
+import com.music.spotui.ui.components.spotifyImageUrl
 import com.music.spotui.ui.immersive.Immersive
 import com.music.spotui.ui.immersive.components.ImmersiveListRow
 import com.music.spotui.ui.immersive.components.ImmersiveMessageState
@@ -116,7 +116,7 @@ fun ImmersiveNewReleasesScreen(navController: NavController) {
 fun ImmersiveEpisodesScreen(navController: NavController) {
     val episodes by produceState<List<com.music.spotui.data.entity.SongsModel>?>(null) { value = Graph.api.getSavedEpisodes() }
     var filter by remember { mutableStateOf(com.music.spotui.data.preferences.PodcastPrefs.libraryFilter()) }
-    ImmersivePage(title = stringResource(R.string.saved_episodes_title), onBack = { navController.popBackStack() }) {
+    ImmersivePage(title = stringResource(R.string.your_episodes_title), onBack = { navController.popBackStack() }) {
         val list = episodes
         when {
             list == null -> immersiveSongListSkeleton(count = 7)
@@ -171,7 +171,7 @@ fun ImmersiveEpisodesScreen(navController: NavController) {
 @Composable
 fun ImmersiveNewEpisodesScreen(navController: NavController) {
     val episodes by produceState<List<com.music.spotui.data.entity.SongsModel>?>(null) { value = Graph.api.getNewEpisodes() }
-    ImmersivePage(title = stringResource(R.string.episodes_new_title), onBack = { navController.popBackStack() }) {
+    ImmersivePage(title = stringResource(R.string.new_episodes_title), onBack = { navController.popBackStack() }) {
         val list = episodes
         when {
             list == null -> immersiveSongListSkeleton(count = 7)
@@ -253,8 +253,8 @@ private fun SpotifyStatsBlock(navController: NavController) {
                         itemsIndexed(top.artists, key = { _, a -> a.uri }) { i, a ->
                             ImmersiveShelfCard(
                                 title = "${i + 1}. ${a.name}", subtitle = null,
-                                imageUrl = imageUrlOf(a.images.best(300)?.url), round = true,
-                                onClick = { navController.navigate(artistRoute(a.name, com.music.spotui.ui.navigation.pageIdOf(a.uri))) },
+                                imageUrl = spotifyImageUrl(a.images.best(300)?.url), round = true,
+                                onClick = { navController.navigate(artistRoute(a.name, a.uri.substringAfterLast(':'))) },
                                 modifier = Modifier.width(120.dp),
                             )
                         }
@@ -266,7 +266,7 @@ private fun SpotifyStatsBlock(navController: NavController) {
                         ImmersiveListRow(
                             title = "${i + 1}  ${t.name}",
                             subtitle = t.artists.joinToString(", ") { it.name },
-                            imageUrl = imageUrlOf(t.album?.images?.best(160)?.url),
+                            imageUrl = spotifyImageUrl(t.album?.images?.best(160)?.url),
                             round = false,
                             onClick = { SongPlayer.playSong(t.uri) },
                         )

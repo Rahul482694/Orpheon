@@ -55,4 +55,16 @@
     <string name="nerd_automix_mixing">Сводится: %1$s</string>
     <string name="nerd_automix_planned">%1$s в %2$s, %3$d с</string>
     <string name="nerd_automix_waiting">Включён, сведение пока не запланировано</string>
+<string name="nerd_section_spotify">Spotify (веб-плеер)</string>
+    
+<string name="nerd_mirror">Зеркало Spotify</string>
+    
+<string name="nerd_mirror_on">Включено: Spotify воспроизводит эту песню без звука на самом низком качестве, поэтому засчитывает её, и Connect её видит</string>
+    
+<string name="nerd_mirror_extension">Включено, удерживается расширением %1$s: Spotify воспроизводит без звука</string>
+    
+<string name="nerd_mirror_off">Выключено</string>
+    
+<string name="nerd_spotify_note">Поток Spotify зашифрован внутри страницы: его точные кодек и битрейт недоступны, только то, что сообщает страница.</string>
+    
 </resources>

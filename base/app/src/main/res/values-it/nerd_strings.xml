@@ -55,4 +55,16 @@
     <string name="nerd_automix_mixing">Mix in corso: %1$s</string>
     <string name="nerd_automix_planned">%1$s a %2$s, %3$d s</string>
     <string name="nerd_automix_waiting">Attivo, nessun mix ancora previsto</string>
+<string name="nerd_section_spotify">Spotify (player web)</string>
+    
+<string name="nerd_mirror">Mirror Spotify</string>
+    
+<string name="nerd_mirror_on">Attivo: Spotify riproduce questo brano senza farlo sentire, alla qualità più bassa, quindi lo conteggia e Connect lo vede</string>
+    
+<string name="nerd_mirror_extension">Attivo, mantenuto da %1$s: Spotify riproduce senza farlo sentire</string>
+    
+<string name="nerd_mirror_off">Disattivato</string>
+    
+<string name="nerd_spotify_note">Il flusso di Spotify è cifrato all\'interno della pagina: il suo codec e il suo bitrate esatti non sono accessibili, solo ciò che la pagina dichiara.</string>
+    
 </resources>

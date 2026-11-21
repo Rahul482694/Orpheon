@@ -13,4 +13,7 @@
     <string name="sources_last_used">Sidst: %1$s, %2$s</string>
     <string name="sources_open">Åbn udvidelsen</string>
     <string name="sources_order_hint">Kilder spørges i den rækkefølge, der er angivet under Indstillinger (Afspilning, Downloads).</string>
+<string name="sources_account">Spotify</string>
+    
+<string name="sources_below_account">Spørges ikke: Spotify er ovenfor</string>
 </resources>

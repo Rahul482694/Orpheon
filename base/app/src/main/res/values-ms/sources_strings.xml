@@ -13,4 +13,7 @@
     <string name="sources_last_used">Terakhir: %1$s, %2$s</string>
     <string name="sources_open">Buka sambungan</string>
     <string name="sources_order_hint">Sumber ditanya mengikut susunan yang ditetapkan dalam Tetapan (Main Balik, Muat Turun).</string>
+<string name="sources_account">Spotify</string>
+    
+<string name="sources_below_account">Tidak ditanya: Spotify berada di atas</string>
 </resources>

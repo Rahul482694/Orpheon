@@ -9,4 +9,6 @@
     <string name="metadata_reset">Revenir à l\'ordre par défaut</string>
     <string name="metadata_spotify_no_answer">Le catalogue n\'a pas répondu : touchez à nouveau le titre</string>
     <string name="metadata_switch">Demander à %1$s</string>
+<string name="metadata_not_on_spotify">Introuvable sur Spotify : ce titre ne peut pas encore être lu</string>
+    
 </resources>

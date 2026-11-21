@@ -13,4 +13,7 @@
     <string name="sources_last_used">最後: %1$s、%2$s</string>
     <string name="sources_open">拡張機能を開く</string>
     <string name="sources_order_hint">ソースは設定（再生、ダウンロード）で設定された順序で確認されます。</string>
+<string name="sources_account">Spotify</string>
+    
+<string name="sources_below_account">確認されません: Spotify が上にあります</string>
 </resources>

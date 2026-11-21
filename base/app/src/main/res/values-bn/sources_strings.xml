@@ -13,4 +13,7 @@
     <string name="sources_last_used">শেষ: %1$s, %2$s</string>
     <string name="sources_open">এক্সটেনশন খুলুন</string>
     <string name="sources_order_hint">সেটিংস-এ (প্লেব্যাক, ডাউনলোড) নির্ধারিত ক্রমে উৎসগুলো জিজ্ঞাসা করা হয়।</string>
+<string name="sources_account">Spotify</string>
+    
+<string name="sources_below_account">জিজ্ঞাসা করা হয় না: Spotify উপরে আছে</string>
 </resources>

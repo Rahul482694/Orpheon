@@ -13,4 +13,7 @@
     <string name="sources_last_used">Naposledy: %1$s, %2$s</string>
     <string name="sources_open">Otevřít rozšíření</string>
     <string name="sources_order_hint">Zdroje se dotazují v pořadí nastaveném v Nastavení (Přehrávání, Stahování).</string>
+<string name="sources_account">Spotify</string>
+    
+<string name="sources_below_account">Nedotazuje se: Spotify je nahoře</string>
 </resources>

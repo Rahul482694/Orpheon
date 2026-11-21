@@ -8,4 +8,6 @@
     <string name="metadata_off">Slökkt: aldrei spurt</string>
     <string name="metadata_reset">Aftur í sjálfgefna röð</string>
     <string name="metadata_switch">Spyrja %1$s</string>
+<string name="metadata_not_on_spotify">Finnst ekki á Spotify: ekki er hægt að spila lagið enn</string>
+    
 </resources>

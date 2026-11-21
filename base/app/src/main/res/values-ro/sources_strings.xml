@@ -13,4 +13,7 @@
     <string name="sources_last_used">Ultima: %1$s, %2$s</string>
     <string name="sources_open">Deschide extensia</string>
     <string name="sources_order_hint">Sursele sunt întrebate în ordinea setată în Setări (Redare, Descărcări).</string>
+<string name="sources_account">Spotify</string>
+    
+<string name="sources_below_account">Nu este întrebat: Spotify este deasupra</string>
 </resources>

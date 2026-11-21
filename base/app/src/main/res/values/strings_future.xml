@@ -36,4 +36,5 @@
     <string name="settings_genius_title">Genius</string>
     <string name="settings_genius_detail">What songs mean and the annotations on their lines, and Genius lyrics when no other source has them. Off: nothing is asked of Genius.</string>
     <string name="welcome_start">Get started</string>
+<string name="setup_account_spotify_next">You sign in next, on Spotify\'s own page. Orpheon never sees your password.</string>
 </resources>

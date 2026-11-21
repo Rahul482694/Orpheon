@@ -17,6 +17,8 @@ data class PassPayload(
     val extensions: List<PassExtension> = emptyList(),
     /** The extensions' whole folder as the Android app keeps it (path → base64), for another Android device. */
     val extensionFiles: Map<String, String> = emptyMap(),
+    /** The account's web session: its cookies on spotify.com. */
+    val cookies: List<PassCookie> = emptyList(),
 ) {
     fun toBytes(): ByteArray = JSON.encodeToString(serializer(), this).encodeToByteArray()
 

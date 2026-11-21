@@ -34,4 +34,7 @@
     <string name="settings_genius_title">Genius</string>
     <string name="settings_genius_detail">Znaczenie piosenek i adnotacje do wersów oraz teksty z Genius, gdy żadne inne źródło ich nie ma. Wyłączone: do Genius nie trafia żadne zapytanie.</string>
     <string name="welcome_start">Zaczynamy</string>
+<string name="pass_confirm_text">Ustawienia, rozszerzenia i logowanie Spotify są kopiowane na to urządzenie, bezpośrednio przez Wi-Fi i zaszyfrowane. Wysyłaj je tylko na własne urządzenia.</string>
+    
+<string name="setup_account_spotify_next">Potem zalogujesz się na stronie samego Spotify. Orpheon nigdy nie widzi Twojego hasła.</string>
 </resources>

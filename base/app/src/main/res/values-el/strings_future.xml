@@ -34,4 +34,7 @@
     <string name="settings_genius_title">Genius</string>
     <string name="settings_genius_detail">Τι σημαίνουν τα τραγούδια και οι σημειώσεις στους στίχους τους, και οι στίχοι του Genius όταν δεν τους έχει άλλη πηγή. Απενεργοποιημένο: τίποτα δεν ζητείται από το Genius.</string>
     <string name="welcome_start">Ας ξεκινήσουμε</string>
+<string name="pass_confirm_text">Οι ρυθμίσεις, οι επεκτάσεις και η σύνδεση Spotify αντιγράφονται σε αυτή τη συσκευή, απευθείας μέσω Wi-Fi και κρυπτογραφημένα. Στείλ’ τα μόνο στις δικές σου συσκευές.</string>
+    
+<string name="setup_account_spotify_next">Μετά συνδέεσαι στη σελίδα του Spotify. Το Orpheon δεν βλέπει ποτέ τον κωδικό σου.</string>
 </resources>

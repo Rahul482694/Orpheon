@@ -13,4 +13,7 @@
     <string name="sources_last_used">Terakhir: %1$s, %2$s</string>
     <string name="sources_open">Buka ekstensi</string>
     <string name="sources_order_hint">Sumber ditanyakan sesuai urutan yang diatur di Pengaturan (Pemutaran, Unduhan).</string>
+<string name="sources_account">Spotify</string>
+    
+<string name="sources_below_account">Tidak ditanyakan: Spotify ada di atas</string>
 </resources>

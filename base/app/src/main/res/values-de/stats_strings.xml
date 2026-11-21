@@ -14,4 +14,16 @@
     <string name="artist_top_short">Dein Künstler Nr. %1$d der letzten 4 Wochen</string>
     <string name="artist_top_medium">Dein Künstler Nr. %1$d der letzten 6 Monate</string>
     <string name="artist_top_long">Dein Künstler Nr. %1$d des letzten Jahres</string>
+    <string name="stats_tab_spotify">Auf Spotify</string>
+    
+<string name="stats_empty">Spotify hat für diesen Zeitraum noch keine Top-Künstler oder -Titel. Hör weiter und schau später wieder vorbei.</string>
+    
+<string name="stats_failed">Spotify hat deine Statistiken nicht gesendet.</string>
+    
+<string name="stats_spotify_note">Von Spotify gerankt, basierend auf allem, was dieses Konto auf jedem Gerät abgespielt hat. Spotify teilt weder Wiedergabezahlen noch Hörminuten: Die Minuten unter „Auf diesem Telefon“ sind Orpheons eigene Zählung.</string>
+    
+<string name="friends_empty">Noch keine Freundesaktivität. Freunde, denen du folgst und die ihre Höraktivität auf Spotify teilen, erscheinen hier.</string>
+    
+<string name="friends_failed">Spotify hat die Freundesaktivität nicht gesendet.</string>
+    
 </resources>

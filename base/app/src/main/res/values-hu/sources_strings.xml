@@ -13,4 +13,7 @@
     <string name="sources_last_used">Utoljára: %1$s, %2$s</string>
     <string name="sources_open">Bővítmény megnyitása</string>
     <string name="sources_order_hint">A források a Beállításokban (Lejátszás, Letöltések) megadott sorrendben kerülnek lekérdezésre.</string>
+<string name="sources_account">Spotify</string>
+    
+<string name="sources_below_account">Nem kérdezzük le: a Spotify fent van</string>
 </resources>

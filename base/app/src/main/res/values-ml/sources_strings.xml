@@ -13,4 +13,7 @@
     <string name="sources_last_used">അവസാനം: %1$s, %2$s</string>
     <string name="sources_open">എക്സ്റ്റൻഷൻ തുറക്കുക</string>
     <string name="sources_order_hint">ക്രമീകരണങ്ങളിൽ (പ്ലേബാക്ക്, ഡൗൺലോഡുകൾ) സജ്ജമാക്കിയ ക്രമത്തിലാണ് ഉറവിടങ്ങൾ ചോദിക്കുന്നത്.</string>
+<string name="sources_account">Spotify</string>
+    
+<string name="sources_below_account">ചോദിക്കില്ല: Spotify മുകളിലാണ്</string>
 </resources>

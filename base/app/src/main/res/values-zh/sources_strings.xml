@@ -23,4 +23,8 @@
     <string name="source_pick_missing">%1$s 没有这首歌曲：它从原来的位置继续播放，你的顺序保持不变。</string>
     <string name="source_pick_next">%1$s 从下一首歌曲开始播放：这首歌曲照常继续播放。</string>
     <string name="source_pick_active">本次会话的临时选择：先查询 %1$s，直到 Orpheon 重新启动。</string>
+<string name="sources_account">Spotify</string>
+    
+<string name="sources_below_account">不询问：Spotify 在上方</string>
+    
 </resources>

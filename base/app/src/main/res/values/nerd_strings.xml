@@ -56,4 +56,16 @@
     <string name="nerd_automix_mixing">Mixing now: %1$s</string>
     <string name="nerd_automix_planned">%1$s at %2$s, %3$d s</string>
     <string name="nerd_automix_waiting">On, no mix planned yet</string>
+<string name="nerd_section_spotify">Spotify (Web Player)</string>
+    
+<string name="nerd_mirror">Spotify mirror</string>
+    
+<string name="nerd_mirror_on">On: Spotify plays this song unheard at its lowest quality, so it counts it and Connect sees it</string>
+    
+<string name="nerd_mirror_extension">On, kept by %1$s: Spotify plays unheard</string>
+    
+<string name="nerd_mirror_off">Off</string>
+    
+<string name="nerd_spotify_note">The Spotify stream is encrypted inside the page: its exact codec and bit rate are not accessible, only what the page announces.</string>
+    
 </resources>

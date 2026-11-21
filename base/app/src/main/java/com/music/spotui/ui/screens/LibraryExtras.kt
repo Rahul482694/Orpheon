@@ -245,6 +245,93 @@ private fun BlendSheet(navController: NavController, onDismiss: () -> Unit) {
     }
 }
 
+/**
+ * A Blend invitation link opened from outside (see InviteLinks.blend): who invites, and "Join".
+ * Spotify's own words for the invitation's state are shown as they come (already translated).
+ * An invitation already joined opens its playlist straight away; one of the account's own is
+ * offered to be sent again.
+ */
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun BlendInviteSheet(link: com.music.spotui.data.api.InviteLinks.BlendLink, navController: NavController, onDismiss: () -> Unit) {
+    val context = LocalContext.current
+    val scope = rememberCoroutineScope()
+    val api = app.myspoti.host.android.MyspotiRuntime.api
+    var invitation by remember(link) { mutableStateOf<app.myspoti.api.BlendInvitation?>(null) }
+    var failed by remember(link) { mutableStateOf(false) }
+    var busy by remember(link) { mutableStateOf(false) }
+    fun open(uri: String) { onDismiss(); navController.navigate(playlistRoute(uri.substringAfterLast(':'))) }
+    LaunchedEffect(link) {
+        api.ready.first { it }
+        runCatching { api.blends.invitation(link.id) }
+            .onSuccess { v ->
+                if (v.state == app.myspoti.api.BlendInvitationState.JOINED && v.playlist != null) open(v.playlist!!)
+                else invitation = v
+            }
+            .onFailure { failed = true }
+    }
+    com.music.spotui.ui.components.LookSheet(onDismissRequest = onDismiss, containerColor = SheetColor) {
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier.fillMaxWidth().navigationBarsPadding().padding(24.dp, 0.dp, 24.dp, 20.dp),
+        ) {
+            val v = invitation
+            val inviter = v?.inviter
+            val own = v?.state == app.myspoti.api.BlendInvitationState.WAITING
+            val joinable = v?.state == app.myspoti.api.BlendInvitationState.JOINABLE || v?.state == app.myspoti.api.BlendInvitationState.UNKNOWN
+            ProfileAvatar(inviter?.imageUrl, inviter?.name, 88.dp)
+            Spacer(Modifier.height(16.dp))
+            val title = when {
+                failed -> stringResource(R.string.blend_failed)
+                v == null -> stringResource(R.string.blend_title)
+                joinable && inviter != null -> stringResource(R.string.blend_invited_by, inviter.name)
+                else -> v.title ?: stringResource(R.string.blend_title)
+            }
+            Text(title, color = AppText, fontSize = 20.sp, fontWeight = FontWeight.Bold, textAlign = androidx.compose.ui.text.style.TextAlign.Center)
+            val detail = when {
+                v == null && !failed -> stringResource(R.string.blend_working)
+                v == null -> null
+                joinable -> stringResource(R.string.blend_detail)
+                else -> v.subtitle
+            }
+            if (detail != null) Text(detail, color = AppMuted, fontSize = 14.sp, textAlign = androidx.compose.ui.text.style.TextAlign.Center,
+                modifier = Modifier.padding(top = 6.dp))
+            Spacer(Modifier.height(24.dp))
+            if (joinable) androidx.compose.material3.Button(
+                enabled = !busy,
+                onClick = {
+                    busy = true
+                    scope.launch {
+                        val uri = runCatching { api.blends.join(link.id) }.getOrNull()
+                        busy = false
+                        if (uri == null) Toast.makeText(context, context.getString(R.string.blend_failed), Toast.LENGTH_SHORT).show()
+                        else {
+                            com.music.spotui.data.api.Api.HomeCache.libraryRoot = null
+                            LibraryEdits.reloadSoon()
+                            open(uri)
+                        }
+                    }
+                },
+                colors = androidx.compose.material3.ButtonDefaults.buttonColors(containerColor = com.music.spotui.ui.theme.AppAccent, contentColor = Color.Black),
+                modifier = Modifier.fillMaxWidth().height(48.dp),
+            ) { Text(stringResource(if (busy) R.string.blend_working else R.string.blend_join_button), fontWeight = FontWeight.Bold, fontSize = 16.sp) }
+            if (own) androidx.compose.material3.Button(
+                onClick = {
+                    val send = android.content.Intent(android.content.Intent.ACTION_SEND).setType("text/plain")
+                        .putExtra(android.content.Intent.EXTRA_TEXT, context.getString(R.string.blend_invite_message, "https://open.spotify.com/blend/taste-match/${link.id}"))
+                    context.startActivity(android.content.Intent.createChooser(send, null).addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK))
+                    onDismiss()
+                },
+                colors = androidx.compose.material3.ButtonDefaults.buttonColors(containerColor = AppText, contentColor = com.music.spotui.ui.theme.AppBackground),
+                modifier = Modifier.fillMaxWidth().height(48.dp),
+            ) { Text(stringResource(R.string.blend_invite), fontWeight = FontWeight.Bold, fontSize = 16.sp) }
+            TextButton(onClick = onDismiss, modifier = Modifier.padding(top = 4.dp)) {
+                Text(stringResource(R.string.blend_later), color = AppText)
+            }
+        }
+    }
+}
+
 @Composable
 private fun PageHeader(title: String, subtitle: String?, navController: NavController, onMenu: (() -> Unit)?) {
     Row(

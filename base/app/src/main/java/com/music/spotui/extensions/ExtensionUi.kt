@@ -152,6 +152,11 @@ fun actionIcon(a: Action?): ImageVector = when (a) {
     Action.PLAYER_BUTTONS -> Icons.Rounded.SmartButton
     Action.SETTINGS_PAGE -> Icons.Rounded.Tune
     Action.NOTIFY -> Icons.Rounded.Notifications
+    Action.LIBRARY_READ -> Icons.Rounded.LibraryMusic
+    Action.LIBRARY_WRITE -> Icons.Rounded.LibraryAdd
+    Action.PLAYLISTS_WRITE -> Icons.AutoMirrored.Rounded.PlaylistAdd
+    Action.SPOTIFY_CATALOG -> Icons.Rounded.Album
+    Action.SPOTIFY_RAW -> Icons.Rounded.Code
     Action.NETWORK -> Icons.Rounded.Public
     Action.WEBVIEW_PAGE -> Icons.Rounded.Web
     Action.WEBVIEW_AUTH -> Icons.Rounded.Key
@@ -175,6 +180,11 @@ fun actionLabel(a: Action?): Int = when (a) {
     Action.PLAYER_BUTTONS -> R.string.action_player_buttons
     Action.SETTINGS_PAGE -> R.string.action_settings_page
     Action.NOTIFY -> R.string.action_notify
+    Action.LIBRARY_READ -> R.string.action_library_read
+    Action.LIBRARY_WRITE -> R.string.action_library_write
+    Action.PLAYLISTS_WRITE -> R.string.action_playlists_write
+    Action.SPOTIFY_CATALOG -> R.string.action_spotify_catalog
+    Action.SPOTIFY_RAW -> R.string.action_spotify_raw
     Action.NETWORK -> R.string.action_network
     Action.WEBVIEW_PAGE -> R.string.action_webview_page
     Action.WEBVIEW_AUTH -> R.string.action_webview_auth
@@ -428,6 +438,14 @@ private fun MenuEntryRow(owner: String, b: Block.MenuEntry, showOwner: Boolean =
 }
 
 // ── The player ──
+
+/** "Spotify mirrored by <extension>" while an extension keeps Spotify muted (playback.mirror). */
+@Composable
+fun MirrorIndicator() {
+    val by = Extensions.mirrorBy.collectAsState().value ?: return
+    Text(stringResource(R.string.mirror_indicator, by), color = AppMuted, fontSize = 12.sp,
+        modifier = androidx.compose.ui.Modifier.padding(top = 6.dp))
+}
 
 /** The extensions' buttons under the player's own controls: a few on screen, the rest behind ⋯. */
 @Composable

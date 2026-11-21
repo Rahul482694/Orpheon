@@ -930,6 +930,7 @@ private fun AccountSheet(
             }
             HorizontalDivider(color = tone(0xFF2A2A2A))
 
+            // Spotify's own account pages (plan, privacy, devices), signed in, in the app.
             val context = androidx.compose.ui.platform.LocalContext.current
             com.music.spotui.data.api.ProfileCache.id?.let { myId ->
                 AccountRow(stringResource(R.string.view_profile)) {

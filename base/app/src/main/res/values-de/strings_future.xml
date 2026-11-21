@@ -34,4 +34,7 @@
     <string name="settings_genius_title">Genius</string>
     <string name="settings_genius_detail">Was Songs bedeuten und die Annotationen zu ihren Zeilen, sowie Genius-Songtexte, wenn keine andere Quelle sie hat. Aus: Genius wird nichts gefragt.</string>
     <string name="welcome_start">Los geht\'s</string>
+<string name="pass_confirm_text">Deine Einstellungen, Erweiterungen und Spotify-Anmeldung werden direkt über dein WLAN und verschlüsselt auf dieses Gerät kopiert. Sende sie nur an deine eigenen Geräte.</string>
+    
+<string name="setup_account_spotify_next">Danach meldest du dich auf Spotifys eigener Seite an. Orpheon sieht dein Passwort nie.</string>
 </resources>

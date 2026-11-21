@@ -14,4 +14,16 @@
     <string name="artist_top_short">你过去 4 周的第 %1$d 位艺人</string>
     <string name="artist_top_medium">你过去 6 个月的第 %1$d 位艺人</string>
     <string name="artist_top_long">你过去一年的第 %1$d 位艺人</string>
+    <string name="stats_tab_spotify">Spotify 上</string>
+    
+<string name="stats_empty">Spotify 暂时没有此时段的热门艺人或曲目。请继续收听，稍后再来查看。</string>
+    
+<string name="stats_failed">Spotify 没有返回你的统计数据。</string>
+    
+<string name="stats_spotify_note">由 Spotify 根据此账号在所有设备上播放的全部内容排名。Spotify 不提供播放次数或收听分钟数：“此手机上”的分钟数是 Orpheon 自己的统计。</string>
+    
+<string name="friends_empty">暂无好友动态。你关注且在 Spotify 上分享收听动态的好友会显示在这里。</string>
+    
+<string name="friends_failed">Spotify 没有返回好友动态。</string>
+    
 </resources>

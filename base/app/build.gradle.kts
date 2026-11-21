@@ -150,6 +150,8 @@ dependencies {
     implementation(project(":host-android"))
     // YouTube Music as the account provider (listen sync, library read, metadata on the user's session).
     implementation(project(":api-ytmusic"))
+    // The native engine: the account's audio outside the Web Player page (NativeAudio), behind its setting.
+    implementation(project(":engine-android"))
     // The watch's app asks this one for the account's session and playlists (WearLinkService).
     implementation("com.google.android.gms:play-services-wearable:20.0.1")
     // AutoMix: song analysis and transition planning (pure Kotlin), Beat This on ONNX Runtime.

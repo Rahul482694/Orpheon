@@ -54,10 +54,31 @@ interface Host {
     fun postToPage(extensionId: String, json: String) {}
 
     /**
+     * Runs one `myspoti.spotify` call as the signed-in account and answers its result as JSON.
+     * The method is known and the right granted already; [SpotifyDispatcher] does the work over a
+     * [app.myspoti.api.MyspotiApi]. Suspends: the script's thread waits, within its time limit.
+     */
+    suspend fun spotify(extensionId: String, call: SpotifyCall): String = throw UnsupportedOperationException("this app has no Spotify account for extensions")
+
+    /** Whether the raw GraphQL operation [name] changes something. Unknown to the host: it does. */
+    fun spotifyMutation(name: String): Boolean = true
+
+    /**
      * Asks the user to allow a destructive change an extension is about to make ([text] says what,
      * in plain words). False refuses it, which is also what a host without a screen answers.
      */
     suspend fun confirm(extensionId: String, text: String): Boolean = false
+
+    /** The writes the user allowed [extensionId] for good on `raw.request` ([RawGrant]). */
+    fun rawGrants(extensionId: String): List<RawGrant> = emptyList()
+
+    /**
+     * Like [confirm], for a `raw.request` write, with a third answer: always allow [offer] to this
+     * extension. On [Consent.ALWAYS] the host keeps [offer] and lists it in the extension's rights,
+     * where the user revokes it. A host that cannot keep grants asks a plain [confirm].
+     */
+    suspend fun confirmWrite(extensionId: String, text: String, offer: RawGrant): Consent =
+        if (confirm(extensionId, text)) Consent.ONCE else Consent.REFUSE
 
     /**
      * Opens a sign-in page for [extensionId] ([Action.WEBVIEW_AUTH], [AuthRequest] checked) and

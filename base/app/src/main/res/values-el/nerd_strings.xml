@@ -55,4 +55,16 @@
     <string name="nerd_automix_mixing">Μίξη τώρα: %1$s</string>
     <string name="nerd_automix_planned">%1$s στο %2$s, %3$d δ</string>
     <string name="nerd_automix_waiting">Ενεργό, καμία μίξη σε πρόγραμμα ακόμη</string>
+<string name="nerd_section_spotify">Spotify (web player)</string>
+    
+<string name="nerd_mirror">Καθρέφτης Spotify</string>
+    
+<string name="nerd_mirror_on">Ενεργός: το Spotify παίζει αυτό το κομμάτι χωρίς να ακούγεται, στη χαμηλότερη ποιότητά του, οπότε το καταμετρά και το Connect το βλέπει</string>
+    
+<string name="nerd_mirror_extension">Ενεργός, διατηρείται από %1$s: το Spotify παίζει χωρίς να ακούγεται</string>
+    
+<string name="nerd_mirror_off">Ανενεργός</string>
+    
+<string name="nerd_spotify_note">Η ροή του Spotify είναι κρυπτογραφημένη μέσα στη σελίδα: ο ακριβής κωδικοποιητής και ο ρυθμός bit της δεν είναι προσβάσιμοι, μόνο όσα δηλώνει η σελίδα.</string>
+    
 </resources>

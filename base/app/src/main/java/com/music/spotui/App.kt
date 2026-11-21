@@ -54,6 +54,23 @@ fun App() {
     // The playlists at the top of the library, fetched ahead on Wi-Fi (see PagePrefetch).
     LaunchedEffect(Unit) { com.music.spotui.data.api.PagePrefetch.start() }
 
+    // A collaborative-playlist invitation was opened (see InviteLinks): its playlist page offers "Join".
+    val invite by com.music.spotui.data.api.InviteLinks.pending.collectAsState()
+    LaunchedEffect(invite) {
+        val i = invite?.takeIf { !it.opened } ?: return@LaunchedEffect
+        app.myspoti.host.android.MyspotiRuntime.api.ready.first { it }
+        i.opened = true
+        navController.navigateSingleTop(com.music.spotui.ui.navigation.playlistRoute(i.playlistId))
+    }
+
+    // A Blend invitation was opened (see InviteLinks): who invites, and "Join", over the app.
+    val blendLink by com.music.spotui.data.api.InviteLinks.blend.collectAsState()
+    blendLink?.let { link ->
+        com.music.spotui.ui.screens.BlendInviteSheet(link, navController) {
+            if (com.music.spotui.data.api.InviteLinks.blend.value === link) com.music.spotui.data.api.InviteLinks.blend.value = null
+        }
+    }
+
     // Genius's explanations of the song playing, read while it starts: ready when the lyrics open.
     val geniusLang = com.music.spotui.ui.components.readerLanguage()
     val playingUri = com.music.spotui.di.SongPlayer.nowPlaying.value.uri
@@ -135,6 +152,8 @@ fun App() {
         else com.music.spotui.ui.navigation.PlayerOverlay(navController)
         // "Not interested" and its Undo, over the pages and the players.
         com.music.spotui.ui.components.HiddenSongUndo()
+        // A sponsor read skipped in a podcast (SponsorBlock), and its Undo.
+        com.music.spotui.podcast.SponsorSkipUndo()
         com.music.spotui.ui.components.NoSourceNotice()
     }
     }

@@ -41,6 +41,16 @@ object DataSaver {
     /** For OkHttp clients. */
     val interceptor = okhttp3.Interceptor { chain -> check(); chain.proceed(chain.request()) }
 
+    /** Shuts the hidden Spotify player down when the saver starts applying, rebuilds it when it stops. */
+    private fun changed() {
+        val now = active
+        if (now == wasActive) return
+        wasActive = now
+        main.post {
+            if (now) app.myspoti.host.android.MyspotiRuntime.suspendPlayer()
+            else app.myspoti.host.android.MyspotiRuntime.resume()
+        }
+    }
 
     fun init(c: Context) {
         if (context != null) return

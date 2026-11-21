@@ -13,4 +13,7 @@
     <string name="sources_last_used">ล่าสุด: %1$s, %2$s</string>
     <string name="sources_open">เปิดส่วนขยาย</string>
     <string name="sources_order_hint">แหล่งจะถูกถามตามลำดับที่ตั้งไว้ในการตั้งค่า (การเล่น, การดาวน์โหลด)</string>
+<string name="sources_account">Spotify</string>
+    
+<string name="sources_below_account">ไม่ถูกถาม: Spotify อยู่ด้านบน</string>
 </resources>

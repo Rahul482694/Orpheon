@@ -13,4 +13,7 @@
     <string name="sources_last_used">Последно: %1$s, %2$s</string>
     <string name="sources_open">Отвори разширението</string>
     <string name="sources_order_hint">Източниците се питат в реда, зададен в Настройки (Възпроизвеждане, Изтегляния).</string>
+<string name="sources_account">Spotify</string>
+    
+<string name="sources_below_account">Не се пита: Spotify е по-горе</string>
 </resources>

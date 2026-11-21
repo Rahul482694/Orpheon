@@ -43,7 +43,9 @@ android {
 }
 
 dependencies {
+    implementation(project(":engine-android"))
     // The listen mirror on the watch: the sync's rules on the native engine (EngineSyncPage).
+    implementation(project(":api-spotify"))
     // The phone's extensions run on the watch too, and the Wi-Fi link to the phone.
     implementation(project(":extensions"))
     implementation(project(":pass"))

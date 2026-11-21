@@ -14,4 +14,16 @@
     <string name="artist_top_short">Twój wykonawca nr %1$d z ostatnich 4 tygodni</string>
     <string name="artist_top_medium">Twój wykonawca nr %1$d z ostatnich 6 miesięcy</string>
     <string name="artist_top_long">Twój wykonawca nr %1$d z ostatniego roku</string>
+    <string name="stats_tab_spotify">W Spotify</string>
+    
+<string name="stats_empty">Spotify nie ma jeszcze najczęściej słuchanych wykonawców ani utworów za ten okres. Słuchaj dalej i zajrzyj później.</string>
+    
+<string name="stats_failed">Spotify nie wysłał Twoich statystyk.</string>
+    
+<string name="stats_spotify_note">Ranking Spotify na podstawie wszystkiego, co to konto odtworzyło na każdym urządzeniu. Spotify nie udostępnia liczby odtworzeń ani przesłuchanych minut: minuty w sekcji „Na tym telefonie” to własne zliczanie Orpheon.</string>
+    
+<string name="friends_empty">Brak aktywności znajomych. Obserwowani znajomi, którzy udostępniają w Spotify swoją aktywność słuchania, pojawią się tutaj.</string>
+    
+<string name="friends_failed">Spotify nie wysłał aktywności znajomych.</string>
+    
 </resources>

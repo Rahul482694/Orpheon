@@ -13,4 +13,7 @@
     <string name="sources_last_used">ಕೊನೆಯದು: %1$s, %2$s</string>
     <string name="sources_open">ವಿಸ್ತರಣೆಯನ್ನು ತೆರೆ</string>
     <string name="sources_order_hint">ಮೂಲಗಳನ್ನು ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ (ಪ್ಲೇಬ್ಯಾಕ್, ಡೌನ್‌ಲೋಡ್‌ಗಳು) ಹೊಂದಿಸಲಾದ ಕ್ರಮದಲ್ಲಿ ಕೇಳಲಾಗುತ್ತದೆ.</string>
+<string name="sources_account">Spotify</string>
+    
+<string name="sources_below_account">ಕೇಳಲಾಗುವುದಿಲ್ಲ: Spotify ಮೇಲಿದೆ</string>
 </resources>

@@ -218,9 +218,11 @@ private fun jumpTo(timeMs: Long) {
 }
 
 private fun shareLyrics(context: Context, title: String, artist: String, line: String?) {
+    val id = SongPlayer.currentTrackId
     val text = buildString {
         if (!line.isNullOrBlank() && line != "♪") append("« ").append(line).append(" »\n")
         append(title).append(" · ").append(artist)
+        if (id.isNotBlank()) append("\nhttps://open.spotify.com/track/").append(id)
     }
     val send = Intent(Intent.ACTION_SEND).setType("text/plain").putExtra(Intent.EXTRA_TEXT, text)
     context.startActivity(Intent.createChooser(send, context.getString(R.string.lyrics_share)).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))

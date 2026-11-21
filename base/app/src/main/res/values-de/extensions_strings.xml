@@ -234,4 +234,26 @@
     <string name="why_source_skipped">übersprungen: %1$s</string>
     <string name="why_source_title">Warum diese Quelle?</string>
     <string name="extensions_guide">So installierst du Erweiterungen</string>
+<string name="extensions_cat_library">Bibliothek</string>
+    
+<string name="extensions_empty_body">Erweiterungen ergänzen Orpheon um das, was die App selbst nicht kann: Songtexte aus anderen Quellen, woher das Audio oder der Download eines Songs kommt, Werkzeuge, die dein Spotify-Konto nutzen. Jede läuft in einer Sandbox und fragt, bevor sie auf etwas zugreift. Füge ein Repository hinzu, um sie zu durchstöbern, oder installiere ein Paket, dem du vertraust.</string>
+    
+<string name="action_spotify_catalog">Spotify durchsuchen</string>
+    
+<string name="action_spotify_raw">Voller Spotify-Zugriff</string>
+    
+<string name="area_library">Bibliothek &amp; Spotify</string>
+    
+<string name="ext_risk_accept">Ich verstehe, dass diese Erweiterung von einem Dritten stammt, und installiere sie auf eigene Verantwortung</string>
+    
+<string name="extension_confirm_once">Einmal erlauben</string>
+    
+<string name="extension_confirm_always">%1$s immer erlauben</string>
+    
+<string name="ext_grants_title">Immer erlaubt</string>
+    
+<string name="ext_grants_note">Spotify-Änderungen, die diese Erweiterung ohne Nachfrage vornimmt. Eine widerrufen, um erneut gefragt zu werden.</string>
+    
+<string name="ext_grant_revoke">Widerrufen</string>
+    
 </resources>

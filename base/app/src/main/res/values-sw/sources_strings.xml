@@ -13,4 +13,7 @@
     <string name="sources_last_used">Mwisho: %1$s, %2$s</string>
     <string name="sources_open">Fungua kiendelezi</string>
     <string name="sources_order_hint">Vyanzo huulizwa kwa mpangilio uliowekwa katika Mipangilio (Uchezaji, Upakuaji).</string>
+<string name="sources_account">Spotify</string>
+    
+<string name="sources_below_account">Haulizwi: Spotify iko juu</string>
 </resources>

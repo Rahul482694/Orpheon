@@ -739,4 +739,192 @@
     <string name="settings_ytm_sign_in_title">Войти в YouTube Music</string>
     <string name="settings_sign_in_close">Закрыть</string>
     <string name="connect_after_ad">Перейдёт на %1$s после рекламы</string>
+<string name="welcome_rotate_ads">без рекламы.</string>
+    
+<string name="welcome_rotate_clips">с официальными клипами.</string>
+    
+<string name="welcome_login">Войти через Spotify</string>
+    
+<string name="welcome_privacy">Вы входите на странице самого Spotify. Orpheon никогда не видит ваш пароль.</string>
+    
+<string name="lyrics_extra_summary">NetEase и Genius, когда в Spotify нет текста</string>
+    
+<string name="spotify_account">Аккаунт Spotify</string>
+    
+<string name="spotify_user">Пользователь Spotify</string>
+    
+<string name="background_playback_on">Оптимизация батареи отключена: музыка и Spotify Connect продолжают играть при выключенном экране.</string>
+    
+<string name="podcast_download_protected">Этот выпуск эксклюзивен для Spotify: его можно слушать только в приложении Spotify, скачать нельзя.</string>
+    
+<string name="not_signed_in">Вы вышли из Spotify. Войдите снова, чтобы это увидеть.</string>
+    
+<string name="language_partial_note">Остальные языки: переведены только надписи самого Spotify, тексты Orpheon остаются на английском.</string>
+    
+<string name="restart_player_detail">Если музыка не отвечает: перезагружает плеер Spotify</string>
+    
+<string name="ad_playing">Реклама</string>
+    
+<string name="local_add_note">Файлы телефона остаются на телефоне: Spotify не может их получить.</string>
+    
+<string name="playlist_change_refused">Spotify отклонил изменение этого плейлиста</string>
+    
+<string name="support_body">Orpheon бесплатен, без рекламы и создан в моё свободное время. Если он вам нравится, небольшое пожертвование поможет проекту жить дальше.</string>
+    
+<string name="about_free">Бесплатно, с открытым кодом и без рекламы. Не связано со Spotify.</string>
+    
+<string name="library_reorder_reset">Вернуть порядок Spotify</string>
+    
+<string name="your_episodes_title">Ваши выпуски</string>
+    
+<string name="new_episodes_title">Новые выпуски</string>
+    
+<string name="recap_sources">Spotify %1$d мин • Загрузки %2$d мин • Локальные файлы %3$d мин</string>
+    
+<string name="recents_title">Недавнее</string>
+    
+<string name="recap_private_note">Учитывает всё, что воспроизведено в Orpheon (Spotify, загрузки, локальные файлы). Хранится только на этом телефоне и никогда не отправляется в Spotify.</string>
+    
+<string name="jam_failed">Spotify отклонил этот Jam</string>
+    
+<string name="setup_intro_spotify_title">Spotify без рекламы</string>
+    
+<string name="setup_intro_spotify_detail">Ваш аккаунт, плейлисты и лайки — через собственный веб-плеер Spotify. Бесплатные аккаунты тоже работают.</string>
+    
+<string name="setup_intro_more_title">Больше, чем официальное приложение</string>
+    
+<string name="setup_intro_ext_title">Расширения — по желанию</string>
+    
+<string name="setup_intro_ext_detail">Дополнения от сообщества: другие источники звука, загрузки и многое другое. Подробнее — дальше.</string>
+    
+<string name="setup_ext_subtitle">Orpheon работает и без них: он воспроизводит Spotify. Расширения — необязательные дополнения от сообщества, которые умеют больше.</string>
+    
+<string name="smart_shuffle_on">Умное перемешивание: рекомендации Spotify добавляются в перемешанный плейлист.</string>
+    
+<string name="settings_title">Настройки</string>
+    
+<string name="setup_quality_subtitle">Выберите, как Orpheon воспроизводит и сохраняет вашу музыку. Позже это можно изменить в настройках.</string>
+    
+<string name="playlist_delete_confirm">Удалить «%1$s»? Его можно восстановить в аккаунте Spotify в течение 90 дней.</string>
+    
+<string name="cancel">Отмена</string>
+    
+<string name="profile_following_count">Подписки: %1$d</string>
+    
+<string name="play_refused">Spotify отказался воспроизводить это в вашем аккаунте. Бесплатные аккаунты в некоторых странах могут играть только в режиме перемешивания: нажмите кнопку перемешивания.</string>
+    
+<string name="play_refused_all">Spotify сейчас отклоняет все команды этого плеера для вашего аккаунта (воспроизведение, перемотка, передача). Плеер уже один раз перезагружен; если ничего не играет, полностью закройте приложение и откройте его снова или переключитесь между Wi-Fi и мобильным интернетом.</string>
+    
+<string name="drm_missing">Воспроизведение здесь невозможно: в Android System WebView этого телефона нет работающего DRM Widevine, который нужен Spotify. Обновите Android System WebView и Chrome в Play Маркете и выберите его в Настройки > Для разработчиков > Реализация WebView.</string>
+    
+<string name="myspoti_shuffle_detail">Если перемешивание включено, плейлист, альбом или «Любимые треки» воспроизводят каждый трек один раз в случайном порядке, а затем начинают заново. Выключено: перемешивание Spotify. Бесплатный аккаунт может сохранять перемешивание Spotify в некоторых списках.</string>
+    
+<string name="myspoti_shuffle_imposed">Spotify сохраняет для вашего аккаунта собственное перемешивание в этом списке: перемешивание Orpheon для него выключено.</string>
+    
+<string name="settings_crossfade_detail">Трек затихает в последние секунды, следующий плавно нарастает. Они никогда не звучат одновременно: один плеер, один аудиопоток.</string>
+    
+<string name="spotify_limited">Spotify ненадолго ограничил воспроизведение. Повторите через минуту.</string>
+    
+<string name="library_change_undone">Spotify отклонил изменение, ваша медиатека вернулась к прежнему виду</string>
+    
+<string name="blend_invite_message">Давай создадим Blend в Spotify: %1$s</string>
+    
+<string name="blend_failed">Не удалось связаться с Blend в Spotify, повторите попытку</string>
+    
+<string name="blend_leave">Покинуть Blend</string>
+    
+<string name="spotify_code_description">Spotify Code</string>
+    
+<string name="spotify_code_hint">Отсканируйте его в Spotify (Поиск, затем камера), чтобы открыть.</string>
+    
+<string name="clip_sound_on_hint">Теперь вы слышите собственный звук клипа. Песня продолжает тихо играть в Spotify, поэтому прослушивание засчитывается.</string>
+    
+<string name="clip_sound_off_hint">Теперь вы снова слышите песню из Spotify.</string>
+    
+<string name="lyrics_word_sync_off">По строкам, сначала Spotify</string>
+    
+<string name="playlist_invite_message">Присоединяйтесь к моему плейлисту «%1$s» в Spotify, вы сможете добавлять в него треки: %2$s</string>
+    
+<string name="songs_skipped_by_spotify">Spotify продолжал пропускать треки, которые не смог воспроизвести, поэтому воспроизведение приостановлено. Нажмите «Воспроизвести», чтобы повторить, или проверьте аккаунт и подключение.</string>
+    
+<string name="licences_refused_by_spotify">Spotify пока отказывается воспроизводить треки на этом аккаунте (аудиолицензия отклонена), поэтому воспроизведение приостановлено. Немного подождите и нажмите «Воспроизвести», чтобы повторить, и проверьте, работает ли аккаунт в официальном приложении Spotify.</string>
+    
+<string name="licences_refused_old_widevine">Spotify отклоняет аудиолицензии этого телефона: его DRM (Widevine %1$s) старее, чем принимает веб-плеер Spotify, независимо от аккаунта, поэтому воспроизведение приостановлено. Треки Spotify нельзя воспроизвести через Orpheon на этом телефоне; расширение-источник аудио может их воспроизвести.</string>
+    
+<string name="settings_hide_dj_detail">Убирает DJ Spotify с главной</string>
+    
+<string name="settings_connect_mirror_title">Учитывать прослушивания из расширений в вашем музыкальном аккаунте</string>
+    
+<string name="settings_connect_mirror_detail">Воспроизводит трек без звука в фоне в выбранном музыкальном аккаунте, чтобы он попал в историю (в Spotify им также могут управлять ваши устройства). Тратит немного больше трафика и заряда: отключите, если не нужно.</string>
+    
+<string name="spotify_plan">Spotify %1$s</string>
+    
+<string name="cast_spotify_detail">Google Cast · воспроизводит Spotify на устройстве</string>
+    
+<string name="cast_spotify_failed">Не удалось запустить Spotify на %1$s</string>
+    
+<string name="player_source_spotify">Spotify · %1$s</string>
+    
+<string name="login_failed_detail">Страница Spotify не загрузилась или не запустилась. Проверьте подключение и повторите попытку. Если не получается, попробуйте другую сеть.</string>
+    
+<string name="lan_device_detail">В этой сети</string>
+    
+<string name="lan_logging_in">Вход…</string>
+    
+<string name="lan_failed">%1$s не принял вход. Откройте его один раз в приложении Spotify и повторите попытку.</string>
+    
+<string name="lan_others">Ещё %1$d устройств в этой сети сначала нужно подключить через приложение Spotify</string>
+    
+<string name="equalizer_scope">Для песен из расширений, загрузок и локальных файлов, которые приложение воспроизводит само. Собственные песни Spotify играют в веб-плеере Spotify, до звука которого приложение не дотягивается: ничто на этой странице их не меняет, как и то, что играет на устройстве Cast.</string>
+    
+<string name="equalizer_speed_detail">Всё, что приложение воспроизводит само, музыка и скачанные выпуски. Выпуски, которые передаёт Spotify, сохраняют скорость подкаст-плеера. При любой скорости, кроме 1×, Spotify не воспроизводит песню параллельно (там она не засчитывается, а ваши другие устройства её не видят): Spotify играет музыку только на 1×.</string>
+    
+<string name="sponsorblock_detail">Пропускает спонсорские вставки и другие части выпусков подкастов, отмеченные сообществом SponsorBlock. Запрашивает у sponsor.ajay.app данные о текущем выпуске (и у YouTube, чтобы при необходимости найти его загрузку); ничего о вас и вашем аккаунте не отправляется.</string>
+    
+<string name="sponsorblock_skip_header">Что пропускать</string>
+    
+<string name="sponsorblock_cat_sponsor">Спонсоры</string>
+    
+<string name="sponsorblock_cat_sponsor_detail">Платная реклама и рекламные вставки</string>
+    
+<string name="sponsorblock_cat_selfpromo">Самореклама</string>
+    
+<string name="sponsorblock_cat_selfpromo_detail">Мерч шоу, Patreon, другие шоу</string>
+    
+<string name="sponsorblock_cat_intro_outro">Вступление и концовка</string>
+    
+<string name="sponsorblock_cat_intro_outro_detail">Музыка в начале и в конце, титры</string>
+    
+<string name="sponsorblock_cat_interaction">Напоминания</string>
+    
+<string name="sponsorblock_cat_interaction_detail">Просьбы подписаться, оценить или отслеживать</string>
+    
+<string name="sponsorblock_skipped">Пропущено: %1$s</string>
+    
+<string name="spatial_detail">Обработка mid/side: то, что звучит по бокам, выходит вперёд, то, что в центре, остаётся на месте. Только песни из расширений, загрузки и локальные файлы: собственные потоки Spotify не обрабатываются. Моно-песни, а в выключенном состоянии и всё остальное, проходят нетронутыми.</string>
+    
+<string name="lan_sonos_consent">Чтобы подключить %1$s, Spotify один раз запрашивает разрешение, которое использует его приложение для компьютера. Разрешите его или закройте эту страницу. Orpheon читает только адрес, на котором заканчивается страница.</string>
+    
+<string name="lan_sonos_refused">%1$s требует входа в Spotify, который Orpheon не удалось получить. Откройте его один раз в приложении Spotify и повторите попытку.</string>
+    
+<string name="lan_sonos_group">%1$s сгруппирован с другими колонками: выберите главную колонку группы или разгруппируйте его в приложении Sonos.</string>
+    
+<string name="settings_transitions_detail">Как сменяют друг друга треки из расширений, загрузок и файлов телефона. Потоки Spotify всегда сменяются коротким затуханием.</string>
+    
+<string name="jam_start_premium">Чтобы начать Jam, нужен Spotify Premium. Присоединиться можно по ссылке или QR-коду.</string>
+    
+<string name="jam_plays_on_host">Музыка играет на устройстве хоста: этот телефон управляет ею. Spotify позволяет слушать Jam на своём телефоне только аккаунтам Premium.</string>
+    
+<string name="settings_section_connect">Spotify Connect и Jam</string>
+    
+<string name="settings_automix_intro_text">AutoMix сводит треки, которые Orpheon играет сам: из расширений, загрузок и файлов на этом телефоне. Треки Spotify играют в веб-плеере Spotify, звук которого приложению недоступен: они сменяются только плавным переходом.\n\nКаждый трек анализируется один раз (доли, такты, тональность). Потоки анализируются по Wi-Fi или по мобильной сети, если вы это разрешите; трек, не проанализированный вовремя, сменяется плавным переходом.</string>
+    
+<string name="automix_reason_spotify">Сейчас без сведения: треки Spotify играют в веб-плеере Spotify и сменяются только плавным переходом.</string>
+    
+<string name="quality_streaming_very_high_detail">256 кбит/с, только для Premium</string>
+    
+<string name="settings_sources_none">Пока ни одно расширение не воспроизводит и не скачивает музыку: всё играет Spotify. Добавьте его в разделе «Расширения».</string>
+    
+<string name="settings_ytm_sync_note">Прослушивания учитывает сам веб-плеер YouTube Music, без звука. Приложения YouTube Music не могут им управлять.</string>
+    
 </resources>

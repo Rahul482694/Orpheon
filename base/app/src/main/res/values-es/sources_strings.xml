@@ -23,4 +23,8 @@
     <string name="source_pick_missing">%1$s no tiene esta canción: sigue desde donde se reproducía y tu orden se queda como estaba.</string>
     <string name="source_pick_next">%1$s reproduce desde la siguiente canción: esta sigue como se reproduce.</string>
     <string name="source_pick_active">Elección temporal para esta sesión: se consulta %1$s primero, hasta que Orpheon se reinicie.</string>
+<string name="sources_account">Spotify</string>
+    
+<string name="sources_below_account">No se consulta: Spotify está arriba</string>
+    
 </resources>

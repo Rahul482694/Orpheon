@@ -13,4 +13,7 @@
     <string name="sources_last_used">Останнє: %1$s, %2$s</string>
     <string name="sources_open">Відкрити розширення</string>
     <string name="sources_order_hint">Джерела опитуються в порядку, заданому в Налаштуваннях (Відтворення, Завантаження).</string>
+<string name="sources_account">Spotify</string>
+    
+<string name="sources_below_account">Не запитується: Spotify вище</string>
 </resources>

@@ -13,4 +13,7 @@
     <string name="sources_last_used">கடைசியாக: %1$s, %2$s</string>
     <string name="sources_open">நீட்டிப்பைத் திற</string>
     <string name="sources_order_hint">அமைப்புகளில் (பிளேபேக், பதிவிறக்கங்கள்) அமைக்கப்பட்ட வரிசையில் ஆதாரங்கள் கேட்கப்படும்.</string>
+<string name="sources_account">Spotify</string>
+    
+<string name="sources_below_account">கேட்கப்படுவதில்லை: Spotify மேலே உள்ளது</string>
 </resources>

@@ -14,4 +14,16 @@
     <string name="artist_top_short">Ваш исполнитель № %1$d за последние 4 недели</string>
     <string name="artist_top_medium">Ваш исполнитель № %1$d за последние 6 месяцев</string>
     <string name="artist_top_long">Ваш исполнитель № %1$d за последний год</string>
+    <string name="stats_tab_spotify">В Spotify</string>
+    
+<string name="stats_empty">У Spotify пока нет топа исполнителей и треков за этот период. Продолжайте слушать и загляните позже.</string>
+    
+<string name="stats_failed">Spotify не прислал вашу статистику.</string>
+    
+<string name="stats_spotify_note">Рейтинг составлен Spotify по всему, что воспроизводил этот аккаунт на всех устройствах. Spotify не делится числом прослушиваний и минутами: минуты в разделе «На этом телефоне» посчитаны самим Orpheon.</string>
+    
+<string name="friends_empty">Пока нет активности друзей. Друзья, на которых вы подписаны и которые делятся активностью в Spotify, появятся здесь.</string>
+    
+<string name="friends_failed">Spotify не прислал активность друзей.</string>
+    
 </resources>

@@ -239,4 +239,22 @@
     <!-- "Why this source?": the chosen extension's own quality setting; %1$s is "Quality: FLAC", %2$s the extension. -->
     <string name="why_source_ext_quality">Its setting: %1$s (%2$s)</string>
     <string name="extensions_guide">How to install extensions</string>
+<string name="extensions_cat_library">Library</string>
+    
+<string name="action_spotify_catalog">Browse Spotify</string>
+    
+<string name="action_spotify_raw">Full Spotify access</string>
+    
+<string name="area_library">Library &amp; Spotify</string>
+    
+<string name="extension_confirm_once">Allow once</string>
+    
+<string name="extension_confirm_always">Always allow %1$s</string>
+    
+<string name="ext_grants_title">Always allowed</string>
+    
+<string name="ext_grants_note">Spotify changes this extension makes without asking you. Revoke one to be asked again.</string>
+    
+<string name="ext_grant_revoke">Revoke</string>
+    
 </resources>

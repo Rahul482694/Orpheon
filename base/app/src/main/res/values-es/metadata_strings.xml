@@ -8,4 +8,8 @@
     <string name="metadata_off">Desactivado: nunca se consulta</string>
     <string name="metadata_reset">Volver al orden predeterminado</string>
     <string name="metadata_switch">Consultar %1$s</string>
+<string name="metadata_not_on_spotify">No está en Spotify: esta canción aún no se puede reproducir</string>
+    
+<string name="metadata_spotify_no_answer">Spotify no respondió: toca de nuevo la canción</string>
+    
 </resources>

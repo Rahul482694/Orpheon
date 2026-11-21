@@ -14,4 +14,16 @@
     <string name="artist_top_short">Seu artista nº %1$d das últimas 4 semanas</string>
     <string name="artist_top_medium">Seu artista nº %1$d dos últimos 6 meses</string>
     <string name="artist_top_long">Seu artista nº %1$d do último ano</string>
+    <string name="stats_tab_spotify">No Spotify</string>
+    
+<string name="stats_empty">O Spotify ainda não tem artistas ou músicas mais ouvidos para este período. Continue ouvindo e volte mais tarde.</string>
+    
+<string name="stats_failed">O Spotify não enviou suas estatísticas.</string>
+    
+<string name="stats_spotify_note">Classificação do Spotify com base em tudo que esta conta reproduziu, em todos os dispositivos. O Spotify não compartilha reproduções nem minutos ouvidos: os minutos de “Neste telefone” são a contagem do próprio Orpheon.</string>
+    
+<string name="friends_empty">Nenhuma atividade de amigos ainda. Os amigos que você segue e que compartilham a atividade de escuta no Spotify aparecem aqui.</string>
+    
+<string name="friends_failed">O Spotify não enviou a atividade dos amigos.</string>
+    
 </resources>

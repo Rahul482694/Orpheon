@@ -545,6 +545,8 @@ object LocalPlayer {
         endFade()
         active.value = false
         com.music.spotui.automix.AutoMix.cancelRequests()
+        // A page left muted by an extension's mirror must not stay silent once Spotify plays again.
+        SongPlayer.unmuteMirror()
         forgetRadio(); continues = false; deletedDownloads.clear()
         handler.removeCallbacks(radioSteady)
         exo?.let { it.stop(); it.clearMediaItems() }
@@ -2057,6 +2059,7 @@ object LocalPlayer {
         p.seekTo(index, 0L)
         p.play()
         log("repeat: ${current()?.title} plays again from ${p.currentPosition} ms (it ended at $endedAt ms)")
+        AccountSync.listen.onLocalRepeat()
     }
 
     /**
@@ -2273,6 +2276,7 @@ object LocalPlayer {
         if (CastPlayback.active) CastPlayback.follow(t, exo?.currentPosition ?: 0L)
         SongPlayer.onLocalState(t, playWhenReady(), position(), duration())
         SongPlayer.onLocalQueue(t, upcoming(), queuedCount())
+        AccountSync.localQueueChanged()
         updateCue()
     }
 }

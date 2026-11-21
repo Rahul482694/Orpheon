@@ -13,4 +13,7 @@
     <string name="sources_last_used">Última: %1$s, %2$s</string>
     <string name="sources_open">Abrir a extensión</string>
     <string name="sources_order_hint">As fontes consúltanse na orde definida en Axustes (Reprodución, Descargas).</string>
+<string name="sources_account">Spotify</string>
+    
+<string name="sources_below_account">Non se pregunta: Spotify está arriba</string>
 </resources>

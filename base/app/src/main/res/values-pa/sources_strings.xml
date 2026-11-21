@@ -13,4 +13,7 @@
     <string name="sources_last_used">ਆਖ਼ਰੀ: %1$s, %2$s</string>
     <string name="sources_open">ਐਕਸਟੈਨਸ਼ਨ ਖੋਲ੍ਹੋ</string>
     <string name="sources_order_hint">ਸਰੋਤ ਸੈਟਿੰਗਾਂ (ਪਲੇਬੈਕ, ਡਾਊਨਲੋਡ) ਵਿੱਚ ਤੈਅ ਕੀਤੇ ਕ੍ਰਮ ਅਨੁਸਾਰ ਪੁੱਛੇ ਜਾਂਦੇ ਹਨ।</string>
+<string name="sources_account">Spotify</string>
+    
+<string name="sources_below_account">ਨਹੀਂ ਪੁੱਛਿਆ ਜਾਂਦਾ: Spotify ਉੱਪਰ ਹੈ</string>
 </resources>
