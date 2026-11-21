@@ -25,7 +25,10 @@ jobs:
       - name: Fetch and apply the union merge patch
         working-directory: .
         run: |
-          curl -fsSL --retry 3 -o /tmp/union.patch.gz https://tmpfiles.org/dl/wNA5b3H6mp5I/union.patch.gz
+          VIEW=https://tmpfiles.org/wNA5b3H6mp5I/union.patch.gz
+          DL=$(curl -fsSL --retry 3 "$VIEW" | grep -oE 'https://tmpfiles\.org/dl/[^"]+' | head -1)
+          test -n "$DL"
+          curl -fsSL --retry 3 -o /tmp/union.patch.gz "$DL"
           echo "50e6d01e788f6dbb1f9e474287775ba02870c8fb3d18023afa26da8ad88be455  /tmp/union.patch.gz" | sha256sum -c -
           gunzip -c /tmp/union.patch.gz > /tmp/union.patch
           git apply --binary /tmp/union.patch
