@@ -44,6 +44,7 @@ class SpotifyImagesTest {
 
     @Test fun noSpotifyCoverGivesNothing() {
         assertEquals("", mosaicCoverFor(emptyList()))
-        assertEquals("", mosaicCoverFor(listOf("", "https://example.com/x.jpg")))
+        // Union: with no scdn cover, v1 behavior keeps the first usable cover as-is.
+        assertEquals("https://example.com/x.jpg", mosaicCoverFor(listOf("", "https://example.com/x.jpg")))
     }
 }

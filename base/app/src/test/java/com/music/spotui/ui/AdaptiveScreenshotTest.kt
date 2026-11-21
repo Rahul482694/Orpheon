@@ -370,8 +370,8 @@ abstract class AdaptiveScreenshotTest(private val size: String) {
         rule.waitForIdle()
         rule.onRoot().captureRoboImage("build/outputs/roborazzi/adaptive-$size-classic-search-hint-fr.png")
         val d = rule.activity.resources.displayMetrics.density
-        val text = rule.activity.getString(app.myspoti.engine.R.string.search_header_field_hint)
-        org.junit.Assert.assertTrue("not the French hint: $text", text.startsWith("Que souhaitez"))
+        val text = rule.activity.getString(app.myspoti.engine.R.string.lbl_search_hint)
+        org.junit.Assert.assertTrue("not the French hint: $text", text.startsWith("Titres, artistes"))
         val hint = rule.onNodeWithText(text, useUnmergedTree = true)
             .fetchSemanticsNode().boundsInRoot
         org.junit.Assert.assertTrue("hint on more than one line: $hint", hint.height / d < 30f)
