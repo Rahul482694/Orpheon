@@ -8,7 +8,7 @@ on:
 
 
 permissions:
-  contents: read
+  contents: write
 
 
 defaults:
@@ -93,3 +93,18 @@ jobs:
           name: orpheon-union-debug
           path: base/app/build/outputs/apk/debug/*.apk
           retention-days: 14
+
+      - name: Publish evidence files
+        working-directory: base
+        run: |
+          git config user.name evidence-bot
+          git config user.email bot@users.noreply.github.com
+          F=$(find app/build/outputs/roborazzi -iname '*choice*.png' -print -quit)
+          echo "chosen PNG: $F"
+          git switch -c "evidence-run-$GITHUB_RUN_ID"
+          mkdir -p evidence
+          cp identity.txt evidence/
+          cp "$F" evidence/screen.png
+          git add evidence
+          git commit -m "evidence for run $GITHUB_RUN_ID"
+          git push origin "evidence-run-$GITHUB_RUN_ID"
