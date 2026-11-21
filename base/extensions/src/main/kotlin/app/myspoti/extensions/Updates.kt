@@ -188,6 +188,8 @@ object UpdateGate {
         }
         val hostsBefore = accepted.hosts().toSet()
         next.hosts().filter { it !in hostsBefore }.forEach { add(Change(Change.Kind.HOST, it, critical = it == "*")) }
+        val writesBefore = accepted.writes().toSet()
+        next.writes().filter { it !in writesBefore }.forEach { add(Change(Change.Kind.WRITE, it, critical = true)) }
         val newActions = next.actions.map { it.name }.filter { it !in was }.toSet()
         next.exclusive.filter { it !in accepted.exclusive && it !in newActions }.forEach { add(Change(Change.Kind.EXCLUSIVE, it, critical = true)) }
         next.replaces.filter { it !in accepted.replaces }.forEach { add(Change(Change.Kind.REPLACES, it)) }
